@@ -1,10 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/Navbar';
+import { BrowserRouter as Router ,Routes,Route } from 'react-router-dom';
+import Home from './pages/Home'
+import Projects from './pages/Projects'
+import Contact from './pages/Contact'
+import About from './pages/About'
 
 function App() {
   return (
     <div>
-    <h1>heelo new project</h1>
+        <Router>
+        <Navbar/>
+        <Routes>
+          <Route path='/home'  Component={Home}/>
+          <Route path='/projects' exact Component={Projects}/>
+          <Route path='/contact' exact Component={Contact}/>
+          <Route path='/about' exact Component={About}/>
+        </Routes>
+        </Router>
     </div>
   );
 }
