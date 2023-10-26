@@ -1,10 +1,12 @@
 .navbar{
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
     background-color:black;
     height: 100px;
     display: flex;
+    z-index: 999;
+    transition: 3s ease-in-out;
 }
 
 .navbar img{
@@ -13,6 +15,7 @@
     border-radius: 290px;
     margin-top:10px;
     margin-left: 40px;
+    transition: 5s ease-in-out;
 }
 
 .navLinks{
@@ -21,20 +24,25 @@
     flex-direction: row;
     padding-right:30px ;
     padding-top: 25px;
+    transition: 3s ease-in-out;
     
 }
 
 .navbar a{
-    padding-left: 20px;
+    padding-left: 40px;
     font-size: x-large;
     text-decoration: none;
     color:rgb(182, 214, 241);
+    transition: 3s ease-in-out;
+    
 }
 
 .navbar p{
     color: antiquewhite;
     padding-left: 25px;
     font-size: xx-large;
+    transition: 3s ease-in-out;
+
 }
 
 .navbar button{
@@ -46,6 +54,44 @@
     right: 30px;
     padding-top: 20px;
 }
+
+.showMobileMenu{
+    z-index: 2000;
+    position: fixed;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    background-color:black;
+    height: 100%;
+    transition: 0.5s ease-in-out;
+}
+
+.closeMobileMenu{
+    z-index: 2000;
+    position: absolute;
+    width: 100%;
+    left: -100%;
+    background-color:transparent;
+    height: 100%;
+    transition: 0.5s ease-in-out;
+
+}
+
+.mobileLinks{
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+}
+.mobileLinks a{
+    text-decoration: none;
+    padding-top: 50px;
+    font-size: xx-large;
+    color: azure;
+    margin-left: 50px;
+
+
+}
+
 
 @media (max-width:1500px) {
     .navbar{
@@ -70,6 +116,9 @@
 @media(max-width:900px) {
     .navLinks{
         display: none;
+    }
+    .navbar img{
+        margin-left: 20px;
     }
 }
 @media(min-width:900px){
