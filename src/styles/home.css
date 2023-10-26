@@ -4,4 +4,141 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    background-image: linear-gradient(180deg, rgb(23, 36, 89),rgb(0, 0, 0));
+    background-size: cover;
+    height: 675px;
+    top: 0;
+}
+
+.homeContent{
+    position: absolute;
+    margin:  150px  200px;
+    transition: 3s ease-in-out;
+}
+
+.homeContent h1{
+    font-family: cursive;
+    font-size:400%;
+    color: rgb(234, 255, 0);
+    margin-top: 0;
+    transition: 3s ease-in-out;
+}
+.homeContent p{
+    font-weight: bold;
+    font-size: xx-large;
+    color: rgb(228, 237, 237);
+    transition: 3s ease-in-out;
+}
+
+.homeContent p span{
+    color: gold;
+}
+
+#name{
+    color: rgb(209, 13, 13);
+}
+
+.home img{
+    margin-top: 150px;
+    position:absolute;
+    border-radius: 250px;
+    width: 600px;
+    right: 200px;
+    transition: 3s ease-in-out;
+}
+
+.button-links{
+    position: absolute;
+    display: inline;
+    margin-left: 200px;
+    margin-top: 450px;
+    transition: 3s ease-in-out;
+}
+
+.home button{
+    width: 200px;
+    height: 70px;
+    border-radius: 50px;
+    margin-right: 40px;
+    background-color: transparent;
+    border-width: 3px;
+    border-color: azure;
+    color: azure;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.home button:hover{
+    background-color: rgb(37, 64, 64);
+}
+@media (max-width:1500px){
+ .homeContent{
+    margin: 100px 150px;
+ }
+
+ .homeContent h1{
+    font-size: 300%;
+ }
+
+ .homeContent p{
+    font-size: x-large;
+ }
+
+ .home img{
+    top: 230px;
+    margin-right: 35%;
+    width: 400px;
+ }
+
+ .button-links{
+    margin-left:100px;
+    margin-top: 550px;
+ }
+
+ .home button{
+    width: 170px;
+    height: 60px;
+ }
+}
+@media(max-width:1000px){
+    .home{
+        height: 686px;
+    }
+    .homeContent{
+        margin: 50px 100px;
+    }
+    .homeContent h1{
+        font-size:200%;
+    }
+    .homeContent p{
+        font-size: large;
+    }
+    .home img{
+        right:200px;
+        top: 130px;
+        width:300px;
+    }
+    .button-links{
+        margin-top: 400px;
+    }
+}@media(max-width:800px){
+    .home{
+        height: 730px;
+    }
+    .homeContent{
+        margin: 20px 50px;
+    }
+    .home img{
+        top:100px;
+        left: 30px;
+    }
+    .button-links{
+        margin-left: 40px;
+    }
+
+    .home button{
+        width: 130px;
+        margin-right: 20px;
+    }
+
 }
