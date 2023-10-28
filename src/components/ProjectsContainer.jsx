@@ -1,7 +1,7 @@
 import React from 'react'
 import image from '../assets/homecontent.jpg'
 import '../styles/projectContainer.css'
-function ProjectsContainer({}) {
+function ProjectsContainer() {
   return (
     <div className='pContainer'>
         <h3>project title</h3>
