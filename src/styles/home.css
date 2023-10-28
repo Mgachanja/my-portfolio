@@ -42,7 +42,7 @@
     border-radius: 250px;
     width: 600px;
     right: 200px;
-    transition: 3s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 
 .button-links{
@@ -50,7 +50,7 @@
     display: inline;
     margin-left: 200px;
     margin-top: 450px;
-    transition: 3s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 
 .home button{
@@ -84,12 +84,12 @@
 
  .home img{
     top: 230px;
-    margin-right: 35%;
+    left: 130px;
     width: 400px;
  }
 
  .button-links{
-    margin-left:100px;
+    margin-left:135px;
     margin-top: 550px;
  }
 
@@ -103,7 +103,7 @@
         height: 686px;
     }
     .homeContent{
-        margin: 50px 100px;
+        margin: 50px 150px;
     }
     .homeContent h1{
         font-size:200%;
@@ -138,5 +138,4 @@
         width: 130px;
         margin-right: 20px;
     }
-
 }
