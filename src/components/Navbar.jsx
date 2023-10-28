@@ -15,16 +15,16 @@ function Navbar() {
     <p>Gachanja.dev</p>
     <div className='navLinks'>
       <Link to='/'>Home</Link>
-      <Link to='/projects'>projects</Link>
       <Link to='/about'>About Me</Link>
+      <Link to='/projects'>projects</Link>
       <Link to='/contact'>Contact</Link>
     </div>
     </div>
     <div className={ToggleMobileMenu?'showMobileMenu':'closeMobileMenu'}>
       <div className='mobileLinks'>
       <Link to='/'><Home/>  Home</Link>
-      <Link to='/projects'><CasesOutlined/>  Projects</Link>
       <Link to='/about'><VerifiedUserRounded/>  About Me</Link>
+      <Link to='/projects'><CasesOutlined/>  Projects</Link>
       <Link to='/contact'><PhoneCallback/>  Contact</Link>
       </div>
     </div>
