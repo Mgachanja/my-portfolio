@@ -8,12 +8,14 @@ function ProjectsContainer() {
         <div className='imgContainer'>
             <img src={`${image}`} alt=''></img>
         </div>
+        <div className='description'>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
           mollitia, molestiae quas vel sint commodi repudiandae consequuntur
           voluptatum laborum numquam blanditiis harum quisquam eius sed odit
           fugiat iusto fuga praesentium optio, eaque rerum!
           </p>
-          <p>check out the code for the project</p>
+          <p a className='section' href='www.'>check out the code for this project on my github!!</p>
+        </div>
     </div>
   )
 }
