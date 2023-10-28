@@ -1,12 +1,10 @@
 .home{
     width: 100%;
-    height: 900px;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
-    background-image: linear-gradient(180deg, rgb(23, 36, 89),rgb(0, 0, 0));
-    background-size: cover;
+    background-position: fixed;
     height: 675px;
+    background-image: linear-gradient(180deg, rgb(23, 36, 89),rgb(0, 0, 0));
     top: 0;
 }
 
