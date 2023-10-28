@@ -1,8 +1,10 @@
 .home{
     width: 100%;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: fixed;
     height: 675px;
-    background-image: linear-gradient(180deg, rgb(102, 35, 105),rgb(0, 0, 0));
+    background-image: linear-gradient(180deg, rgb(23, 36, 89),rgb(0, 0, 0));
     top: 0;
 }
 
@@ -67,7 +69,7 @@
 .home button:hover{
     background-color: rgb(37, 64, 64);
 }
-@media (max-width:1300px){
+@media (max-width:1500px){
  .homeContent{
     margin: 100px 150px;
  }
@@ -87,7 +89,7 @@
  }
 
  .button-links{
-    margin-left:135px;
+    margin-left:10px;
     margin-top: 550px;
  }
 
@@ -101,7 +103,7 @@
         height: 686px;
     }
     .homeContent{
-        margin: 50px 150px;
+        margin: 50px 100px;
     }
     .homeContent h1{
         font-size:200%;
@@ -136,4 +138,5 @@
         width: 130px;
         margin-right: 20px;
     }
+
 }
