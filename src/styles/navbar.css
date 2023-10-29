@@ -1,130 +1,72 @@
 .navbar{
-    position: sticky;
-    top: 0;
-    width: 100%;
+    position: fixed;
+    top:0;
+    width: 75px;
     background-color:black;
-    height: 100px;
-    display: flex;
+    height: 100%;
     z-index: 999;
-    transition: 0.5s ease-in-out;
+    overflow: hidden;
+    transition: 0.3s ease-in-out;
 }
 
-.navbar img{
-    height:70px ;
-    width: 70px;
-    border-radius: 290px;
-    margin-top:10px;
-    margin-left: 40px;
-    transition: 0.5s ease-in-out;
-}
-
-.navLinks{
-    position:absolute;
-    right:20px;
-    flex-direction: row;
-    padding-right:30px ;
-    padding-top: 35px;
-    transition: 0.5s ease-in-out;
-    
-}
-
-.navbar a{
-    font-family: 'Courier New', Courier, monospace;
-    padding-left: 40px;
-    font-size: x-large;
-    text-decoration: none;
-    color:rgb(182, 214, 241);
-    transition: 0.5s ease-in-out;
-    
-}
-
-.navbar p{
-    color: antiquewhite;
-    padding-left: 25px;
-    font-size: xx-large;
-    transition:0.5s ease-in-out;
-
-}
-
-.navbar button{
-    position:absolute;
-    background-color: transparent;
-    color: antiquewhite;
-    border: none;
-    cursor: pointer;
-    right: 30px;
-    padding-top: 20px;
-}
-
-.showMobileMenu{
-    z-index: 2000;
-    position: sticky;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    background-color:black;
-    height: 100%;
-    transition: 0.5s ease-in-out;
-}
-
-.closeMobileMenu{
-    z-index: 2000;
-    position: absolute;
-    width: 100%;
-    left: -100%;
-    background-color:transparent;
-    height: 100%;
-    transition: 0.5s ease-in-out;
-
-}
-
-.mobileLinks{
+.logo{
+    position: relative;
     display: flex;
-    flex-direction: column;
-    padding-top: 50px;
+    flex-direction: row;
+    left: 35px;
+    transform: translate(-50%);
+    top: 20px;
+    height:50px;
+    width:50px;
+    top: 20px;
+    transition: 0.5s ease-in-out;
 }
-.mobileLinks a{
-    text-decoration: none;
-    padding-top: 50px;
-    font-size: xx-large;
+
+.logo img{
+    height: 100%; 
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.logo h2{
+    padding-left: 20px;
     color: azure;
-    margin-left: 50px;
+}
 
+.navList{
+    position:relative;
+    padding: 100px 15px;
+    width: 0;
+}
 
+.icon {
+    margin-bottom: 75px;
+    position: relative;
+    color: azure;
+    padding: 20px;
+}
+
+.icon:hover{
+    color: aqua;
+}
+
+.navbar:hover{
+    width: 250px;
+}
+
+.icon a{
+    padding-left: 20px;
+    text-decoration: none;
+    color: azure;
+    font-size: 150%;
+}
+
+.icon a:hover{
+    text-decoration: underline;
 }
 
 
-@media (max-width:1300px) {
-    .navbar{
-    height: 70px;
-    }
-    .navbar a{
-        font-size: large;
-    }
-    .navLinks{
-        padding-top: 17px;
-    }
-    .navbar img{
-        height:50px ;
-        width: 50px;
-        border-radius: 60px;
-    }
 
-    .navbar p{
-        font-size: x-large;
-    }
-}
-@media(max-width:900px) {
-    .navLinks{
-        display: none;
-    }
-    .navbar img{
-        margin-left: 20px;
-    }
-}
-@media(min-width:900px){
-    .navbar button{
-        display: none;
-    }
-}
+
+

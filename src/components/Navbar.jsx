@@ -8,35 +8,47 @@ function Navbar() {
   const[ToggleMobileMenu,setToggleMobileMenu] = useState(false)
   const mobileMenu=()=>{ setToggleMobileMenu(!ToggleMobileMenu)}
   return (
-  <>
+  
    <div className='navbar'>
-    <div className='logos'>
+    <div className='logo'>
       <img src={logo} alt=''></img>
+      <h2>Gachanja.Dev</h2>
     </div>
     <ul className='navList'>
       <div className='icon'>
-        <Home style={{fontSize:50 ,color:'azure'}}/>
+        <Home style={{fontSize:40 }}/>
+        <Link to = '/'>Home</Link>
+
       </div>
 
       <div className='icon'>
-        <VerifiedUserRounded style={{fontSize:50 ,color:'azure'}}/>
+        <Link to = '/about'>
+        <VerifiedUserRounded style={{fontSize:40 ,margin:0}}/> About</Link>
       </div>
 
       <div className='icon'>
-        <CasesOutlined style={{fontSize:50 ,color:'azure'}}/>
+        <Link to = '/projects'> 
+          <CasesOutlined style={{fontSize:40 ,position:'relative'}}/>
+          Projects</Link>
       </div>
       
        <div className='icon'>
-        <DocumentScannerTwoTone style={{fontSize:50 ,color:'azure'}}/>
+       <Link to = '/blog'>
+        <DocumentScannerTwoTone style={{fontSize:40 }}/>
+        Blog</Link>
+
       </div>
       
        <div className='icon'>
-        <PhoneCallback style={{fontSize:50 ,color:'azure'}}/>
+       <Link to = '/contact'>
+        <PhoneCallback style={{fontSize:40 ,}}/>
+        Contact</Link>
+        
       </div>
 
     </ul>
    </div>
-   </>
+  
   )
 }
 
