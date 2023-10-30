@@ -1,0 +1,156 @@
+.home{
+    margin-left: 75px;
+    width: auto;
+    height: 100%;
+}
+
+.homeContent{
+    width: 100%;
+    position:fixed;
+    background-color: rgb(0, 0, 0);
+}
+
+.home-mini-nav{
+    position: inherit;
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+.intro{
+    position: relative;
+    top: 10%;
+    transform: translate( 0 ,10%);
+    margin: 0 300px;
+    padding: 0 20px 500px 0;
+
+}
+.name{
+    color: azure;
+    font-weight: bold;
+    font-size: 250%;
+}
+
+.name span{
+    color: gold;
+}
+
+.profession{
+    font-weight: bolder;
+   color: transparent;
+    background:linear-gradient(45deg,rgb(83, 6, 100) ,rgb(255, 0, 0)) ;
+    background-clip: text;
+}
+
+.profession #me {
+    font-size: 95px;
+    margin-bottom: 0;
+    line-height: 70px;
+}
+
+.profession .full{
+    line-height: 80px;
+    font-size: 105px;
+}
+
+
+.profession .stack{
+    font-size: 80px;
+    line-height: 60px;
+
+}
+
+.profession .dev{
+    font-size: 45px;
+}
+
+.description{
+    font-size: 125%;
+}
+
+.description span{
+    font-size: 50px;
+    color: gold;
+    line-height: 0;
+}
+
+@media(max-width:1200px){
+    .home{
+        margin: 0;
+    }
+}
+
+@media(max-width:1000px){
+    .intro{
+        margin: 0 200px;
+    }
+
+    .name{
+        font-size: 200%;
+    }
+
+    .profession #me{
+        font-size: 80px;
+        line-height: 60px;
+    }
+
+    .profession .full{
+        font-size: 85px;
+        line-height: 70px;
+    }
+
+    .profession .stack{
+        font-size:65px;
+    }
+
+    .profession .dev{
+        font-size: 35px;
+    }
+
+}
+@media(max-width:800px){
+    .intro{
+        margin: 0 100px;
+    }
+
+    .name{
+        font-size: 150%;
+    }
+
+    .profession #me{
+        font-size: 70px;
+        line-height: 45px;
+    }
+
+    .profession .full{
+        font-size: 70px;
+        line-height: 55px;
+    }
+
+    .profession .stack{
+        font-size: 65px;
+    }
+
+    .profession .dev{
+        font-size: 20px;
+    }
+}
+
+@media(max-width:700px){
+    .intro{
+        margin: 0 20px;
+    }
+
+    .name{
+        font-size: 140%;
+    }
+
+    .description{
+        font-size: 115%;
+    }
+
+    .description span{
+        line-height: 0px;
+    }
+
+}
