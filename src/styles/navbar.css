@@ -6,19 +6,17 @@
     height: 100%;
     z-index: 999;
     overflow: hidden;
-    transition: 0.3s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 
 .logo{
-    position: relative;
     display: flex;
+    position: relative;
     flex-direction: row;
-    left: 35px;
-    transform: translate(-50%);
-    top: 20px;
+    left: 15px;
     height:50px;
-    width:50px;
     top: 20px;
+    width:50px;
     transition: 0.5s ease-in-out;
 }
 
@@ -35,16 +33,17 @@
 }
 
 .navList{
-    position:relative;
-    padding: 100px 15px;
-    width: 0;
+    position:inherit;
+    padding: 100px 0;
 }
 
-.icon {
+.icon{
+    width: 0;
     margin-bottom: 75px;
     position: relative;
+    display: flex;
+    flex-direction: row;
     color: azure;
-    padding: 20px;
 }
 
 .icon:hover{

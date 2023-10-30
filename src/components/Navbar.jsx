@@ -22,27 +22,25 @@ function Navbar() {
       </div>
 
       <div className='icon'>
-        <Link to = '/about'>
-        <VerifiedUserRounded style={{fontSize:40 ,margin:0}}/> About</Link>
+        <VerifiedUserRounded style={{fontSize:40 }}/>
+        <Link to = '/about' className=''>About</Link>
       </div>
 
       <div className='icon'>
-        <Link to = '/projects'> 
-          <CasesOutlined style={{fontSize:40 ,position:'relative'}}/>
-          Projects</Link>
-      </div>
-      
-       <div className='icon'>
-       <Link to = '/blog'>
-        <DocumentScannerTwoTone style={{fontSize:40 }}/>
-        Blog</Link>
+        <CasesOutlined style={{fontSize:40 }}/>
+        <Link to = '/projects'>Projects</Link>
 
       </div>
       
        <div className='icon'>
-       <Link to = '/contact'>
+        <DocumentScannerTwoTone style={{fontSize:40 }}/>
+        <Link to = '/blog'>Blog</Link>
+
+      </div>
+      
+       <div className='icon'>
         <PhoneCallback style={{fontSize:40 ,}}/>
-        Contact</Link>
+        <Link to = '/contact'>Contact</Link>
         
       </div>
 
