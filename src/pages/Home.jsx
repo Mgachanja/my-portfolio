@@ -8,6 +8,7 @@ function Home() {
           <div className='homeContent'>
             <div className='home-mini-nav'>
               <LinkedIn style={{fontSize:40,color:'skyblue',marginRight:20}}/><DocumentScanner style={{fontSize:35,color: 'white'}}/>
+              <h1>Gachanja.Dev</h1>
             </div>
             <div className='intro'>
               <p className='name'>Hey, I'm<span> Gachanja .</span><WavingHand style={{fontSize:50,color:'lightyellow'}}/></p>

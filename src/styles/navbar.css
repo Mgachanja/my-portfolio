@@ -2,7 +2,7 @@
     position: fixed;
     top:0;
     width: 75px;
-    background-color:black;
+    background-color:rgb(38, 38, 38);
     height: 100%;
     z-index: 999;
     overflow: hidden;
