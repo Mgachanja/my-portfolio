@@ -1,6 +1,6 @@
 import React from 'react'
 import '../styles/home.css'
-import { Celebration, DocumentScanner, LinkedIn, PhoneEnabled, WavingHand } from '@mui/icons-material'
+import { Celebration, DocumentScanner, LinkedIn, WavingHand } from '@mui/icons-material'
 import Stars from '../components/Stars'
 function Home() {
   return (
