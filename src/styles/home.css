@@ -36,7 +36,7 @@
     top: 10%;
     transform: translate( 0 ,10%);
     margin: 0 300px;
-    padding: 0 20px 500px 0;
+    padding: 0 20px 250px 0;
 
 }
 .name{
@@ -96,7 +96,7 @@
 
 @media(max-width:1000px){
     .intro{
-        margin: 0 200px;
+        padding: 50px 100px 250px 20px;
     }
 
     .name{
@@ -142,11 +142,11 @@
     }
 
     .profession .stack{
-        font-size: 65px;
+        font-size: 55px;
     }
 
     .profession .dev{
-        font-size: 20px;
+        font-size: 30px;
     }
 }
 
