@@ -4,10 +4,12 @@
     border:2px;
     border-color: azure;
     border-style: solid;
-    border-radius: 20px;
+    border-radius: 10px;
     display: grid;
     padding: 10px;
 }
+
+
 
 .skillsImg{
     border-radius: 20px;
@@ -25,4 +27,21 @@
     font-size: 150%;
     font-weight: bold;
     color: azure;
+}
+
+@media(max-width:900px){
+    .skill {
+        width: 325px;
+        padding: 15px;
+    }
+
+    .skillsImg{
+        width: 320px;
+    }
+
+    .skillsName p{
+        font-size: 125%;
+
+    }
+
 }
