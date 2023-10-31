@@ -1,5 +1,6 @@
 .aboutPage{
     width: 100%;
+    padding-left:75px;
     height: auto;
     background-color: black;  
     display: flex;  
