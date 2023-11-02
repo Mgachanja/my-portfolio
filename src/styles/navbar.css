@@ -44,7 +44,6 @@
 .icon{
     display: flex;
     flex-direction: row;
-    width: 0;    
 }
 
 .btn{

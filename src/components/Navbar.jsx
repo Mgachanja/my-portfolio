@@ -13,7 +13,7 @@ function Navbar() {
     <div className='logo'>
       <img src={logo} alt=''></img>
       <h2>Gachanja.Dev</h2>
-    </div>
+    </div>z
     <ul className='navList'>
       <div className='icon'>
         <Link to='/' className='icons'> <Home style={{fontSize:40, color:'azure'}}/></Link>
