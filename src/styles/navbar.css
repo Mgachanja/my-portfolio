@@ -15,9 +15,9 @@
     position: relative;
     flex-direction: row;
     left: 10px;
-    height:50px;
+    height:30px;
     top: 20px;
-    width:50px;
+    width:30px;
     transition: 0.5s ease-in-out;
 }
 
@@ -28,14 +28,15 @@
     object-fit: cover;
 }
 
-.logo h2{
-    padding-left: 20px;
+.logo h3{
+    padding-left: 5vh;
+    margin-top: -3px;
     color: azure;
 }
 
 .navList{
     position:relative;
-    padding: 70px 0;
+    padding: 40px 0;
     display: flex;
     flex-direction: column;
     width: 0;
@@ -62,8 +63,8 @@
 .icon a{
     text-decoration: none;
     color: azure;
-    font-size: 150%;
-    margin-left: 15px;
+    font-size: 125%;
+    margin-left: 20px;
     margin-bottom: 65px;
     padding-right: 10px;
 }

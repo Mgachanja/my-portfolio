@@ -7,7 +7,7 @@ function Home() {
     <div className='home'>
           <div className='homeContent'>
             <div className='home-mini-nav'>
-              <LinkedIn style={{fontSize:40,color:'skyblue',marginRight:20}}/><DocumentScanner style={{fontSize:35,color: 'white'}}/>
+              <LinkedIn style={{fontSize:20,color:'skyblue',marginRight:20}}/><DocumentScanner style={{fontSize:25,color: 'white'}}/>
               <h1>Gachanja.Dev</h1>
             </div>
             <Stars/>
