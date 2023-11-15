@@ -94,13 +94,13 @@
 }
 
 
-@media(max-width:1200px){
+@media(max-width:1024px){
     .navbar{
         display: none;
     }
 }
 
-@media(min-width:1200px){
+@media(min-width:1024px){
     .btn{
         display:none;
     }
