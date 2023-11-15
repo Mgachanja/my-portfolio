@@ -140,7 +140,7 @@ border-radius: 20px;
         height: 600px;
     }
 
-    .skills{
+    .skills1,.skills2{
         margin: 20px 0;
         display: flex;
         flex-direction: column;

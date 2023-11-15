@@ -17,7 +17,7 @@ function Home() {
             <div className='intro'>
               <p className='name'>Hey, I'm<span> Gachanja .</span><WavingHand style={{fontSize:50,color:'lightyellow'}}/></p>
               <p className='profession'><span id='me'>I'm a </span><br/><span className='full'>FULL</span><br/><span className='stack'>STACK</span><br/><span className='dev'>DEVELOPER</span></p>
-              <p className='description'><TypingText text={desc}/><br/>lets connect <Celebration style={{color:'orange'}}/></p> 
+              <p className='description'><TypingText text={desc}/>lets connect <Celebration style={{color:'orange'}}/></p> 
             </div>
           </div>
     </div>
