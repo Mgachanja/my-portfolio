@@ -13,36 +13,36 @@ function Navbar() {
     <div className='logo'>
       <img src={logo} alt=''></img>
       <h2>Gachanja.Dev</h2>
-    </div>z
+    </div>
     <ul className='navList'>
       <div className='icon'>
-        <Link to='/' className='icons'> <Home style={{fontSize:40, color:'azure'}}/></Link>
+        <Link to='/' className='icons'> <Home style={{fontSize:25, color:'azure'}}/></Link>
         <Link to = '/'>Home</Link>
       </div>
 
       <div className='icon'>
-      <Link to = '/about' className='icons'><VerifiedUserRounded style={{fontSize:40, color:'azure' }}/></Link>
+      <Link to = '/about' className='icons'><VerifiedUserRounded style={{fontSize:25, color:'azure' }}/></Link>
         <Link to = '/about'>About</Link>
       </div>
 
       <div className='icon'>
-      <Link to = '/projects' className='icons'><CasesOutlined style={{fontSize:40, color:'azure' }}/></Link>
+      <Link to = '/projects' className='icons'><CasesOutlined style={{fontSize:25, color:'azure' }}/></Link>
         <Link to = '/projects'>Projects</Link>
       </div>
       
        <div className='icon'>
-       <Link to = '/blog' className='icons'><DocumentScannerTwoTone style={{fontSize:40, color:'azure' }}/></Link>
+       <Link to = '/blog' className='icons'><DocumentScannerTwoTone style={{fontSize:25, color:'azure' }}/></Link>
         <Link to = '/blog'>Blog</Link>
       </div>
       
        <div className='icon'>
-       <Link to = '/contact' className='icons'><PhoneCallback style={{fontSize:40 , color:'azure'}}/></Link>
+       <Link to = '/contact' className='icons'><PhoneCallback style={{fontSize:25 , color:'azure'}}/></Link>
         <Link to = '/contact'>Contact</Link>
       </div>
     </ul>
    </div>
 
-   <div className='btn' onClick={mobileMenu}><Reorder style={{color:'azure',fontSize:40}}/></div>
+   <div className='btn' onClick={mobileMenu}><Reorder style={{color:'azure',fontSize:25}}/></div>
    <div className={ToggleMobileMenu?'showMobileMenu':'hideMobileMenu'}>
    <div className='logo'>
       <img src={logo} alt=''></img>
@@ -50,27 +50,27 @@ function Navbar() {
     </div>
     <ul className='navList' onClick={mobileMenu}>
       <div className='icon'>
-        <Link to='/' className='icons'> <Home style={{fontSize:40, color:'azure'}}/></Link>
+        <Link to='/' className='icons'> <Home style={{fontSize:25, color:'azure'}}/></Link>
         <Link to = '/'>Home</Link>
       </div>
 
       <div className='icon'>
-      <Link to = '/about' className='icons'><VerifiedUserRounded style={{fontSize:40, color:'azure' }}/></Link>
+      <Link to = '/about' className='icons'><VerifiedUserRounded style={{fontSize:25, color:'azure' }}/></Link>
         <Link to = '/about'>About</Link>
       </div>
 
       <div className='icon'>
-      <Link to = '/projects' className='icons'><CasesOutlined style={{fontSize:40, color:'azure' }}/></Link>
+      <Link to = '/projects' className='icons'><CasesOutlined style={{fontSize:25, color:'azure' }}/></Link>
         <Link to = '/projects'>Projects</Link>
       </div>
       
        <div className='icon'>
-       <Link to = '/blog' className='icons'><DocumentScannerTwoTone style={{fontSize:40, color:'azure' }}/></Link>
+       <Link to = '/blog' className='icons'><DocumentScannerTwoTone style={{fontSize:25, color:'azure' }}/></Link>
         <Link to = '/blog'>Blog</Link>
       </div>
       
        <div className='icon'>
-       <Link to = '/contact' className='icons'><PhoneCallback style={{fontSize:40 , color:'azure'}}/></Link>
+       <Link to = '/contact' className='icons'><PhoneCallback style={{fontSize:25 , color:'azure'}}/></Link>
         <Link to = '/contact'>Contact</Link>
       </div>
     </ul>
