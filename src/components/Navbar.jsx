@@ -12,7 +12,7 @@ function Navbar() {
     <div className='navbar'>
     <div className='logo'>
       <img src={logo} alt=''></img>
-      <h2>Gachanja.Dev</h2>
+      <h3>Gachanja.Dev</h3>
     </div>
     <ul className='navList'>
       <div className='icon'>
