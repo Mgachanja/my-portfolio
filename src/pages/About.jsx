@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import '../styles/about.css'
 import {motion} from 'framer-motion'
 import { me, mySkills,other } from '../helpers/Me'
@@ -12,7 +11,8 @@ function About() {
 
   return (
     <div className='aboutPage'>
-      <h1 className='Title'>get to know me</h1>
+    <h1 className='page'>About<span>.</span></h1>
+    <div className='line'></div>
       <div className='me'>
         <div className='paragraph' >
         {
@@ -28,9 +28,9 @@ function About() {
       <div className='mySkills'>
         <h1 className='Title'>my skills</h1>
         <motion.div
-            initial={{ opacity: 0, x: '-100%'}}
-            whileInView={{opacity:1 ,x:0 }}
-            transition={{ duration: 2 }}    // Animation duration
+            initial={{ opacity: 0, x: '-100%',}}
+            whileInView={{opacity:1 ,x:0 ,}}
+            transition={{ duration: 1, }}    
         
          className='skills1'>
 
@@ -41,9 +41,9 @@ function About() {
         </motion.div>
         <h1 className='Title'>learning the following skills currently :</h1>
         <motion.div 
-         initial={{ opacity: 0, x: '100%', }}
-            whileInView={{opacity:1 ,x:0,}}
-            transition={{ duration: 2 }}
+         initial={{ opacity: 0, x: '-100%', }}
+            whileInView={{opacity:1 ,x:0, }}
+            transition={{ duration: 1,}}
         className='skills2'>
         {other.map((item)=>
         <Skills img={`${item.Image}`} name={item.TechName}/>

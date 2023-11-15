@@ -1,40 +1,74 @@
 .aboutPage{
-    width: 100%;
+    width: auto;
     height: auto;
-    padding-top: 100px;
+    margin-left: 65px;
     background-color: black;  
     display: flex;  
     flex-direction: column;
     transition: all 1s ease-in-out;
+    overflow: hidden;
 }
 
+.mySkills{
+    margin-left: 50px;
+}
+
+.page{
+    font-size: 450%;
+    align-items: center;
+    margin-left: 50px;
+    font-weight: bolder;
+    color: rgb(228, 66, 66);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.page span{
+    color: rgb(70, 43, 226);
+    margin-left: 5px;
+}
+
+.line{
+    position: absolute;
+    background: linear-gradient(90deg, rgb(255, 255, 255),rgb(195, 8, 8),rgb(16, 123, 200),rgb(255, 255, 255));
+    top: 100px;
+    width: 70%;
+    margin-left: 280px;
+    height: 1px;
+}
 
 .me{
     align-items: center;
     justify-items: center;
-    margin: 100px;
+    margin:0;
     display: flex;
     justify-content: center;
     align-items: center;
     column-gap:50px;
 }
 
+.Title1{
+    color: gold;
+    margin-right: 10px;
+    margin-bottom: 50px;
+    font-size: 50px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    position: relative;
+    left: 70%;
+}
+
 .Title{
     color: gold;
-    display: flex;
+    position: relative;
+    place-items: center;
     justify-content: center;
-    align-items: center;
-    font-size: 250%;
-    margin: 0;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
 }
 
 .paragraph{
-width: 80%;
-height: auto;
-border: 2px;
-border-style: solid;
-border-color: azure;
-border-radius: 20px;
+    width: 65%;
+    height: auto;
+    border: 2px;
 }
 
 .paragraph h3{
@@ -47,21 +81,19 @@ border-radius: 20px;
     font-size: large;
 }
 
-.mySkills{
-    margin-top: 100px;
-}
-
-.skills1,.skills2{
+.skills1,
+.skills2{
+    width: 100%;
     position: relative;
     left: 0;
-    margin:100px;
+    margin:0;
+    margin-top: 20px;
     display: grid;
-    grid-template-columns:repeat(5, 1fr);
+    grid-template-columns:repeat(5,0fr);
     place-items: center;
-    gap: 50px;
-}
-
-.skillsHide{
+    justify-items: center;
+    gap: 100px;
+    column-gap: 100px;
 }
 
 .btnProjects{
@@ -84,10 +116,15 @@ border-radius: 20px;
     font-size: large;
 
 }
+@media(min-width:1024px){
+    .aboutPage{
+        margin: 0;
+    }
+}
 
-@media(max-width:1500px){
+@media(max-width:1000px){
     .paragraph{
-        width: 1300px;
+        width:900px;
         margin-bottom: 50px;
     }
 
@@ -95,41 +132,77 @@ border-radius: 20px;
         display: flex;
         flex-direction: column;
     }
+
+    .skills1,
+    .skills2{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 70px;
+        column-gap: 70px;
+
+    }
+
+    .Title{
+        font-size: 30px;
+    }
+
 }
 
-@media(max-width:1350px){
+@media(max-width:900px){
     .paragraph{
-        width:1000px;
+        width:750px;
     }
 
-    .skills{
-        grid-template-columns: repeat(4 , 1fr);
+    .skills1,
+    .skills2{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 50px;
+        column-gap: 50px;
+    }
 
+    .title1{
+        transform: translate(-50% 0);
+        font-size: 30px;
+    }
+
+    .Title{
+        font-size: 50px;
     }
 
 }
-@media(max-width:1200px){
+@media(max-width:800px){
+    .mySkills{
+        margin-left:0;    
+        
+    }
 
     .paragraph{
-        width: 800px;
+        width: 600px;
     }
-    .skills{
-        grid-template-columns: repeat(3 , 1fr);
+    .skills1,.skills2{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        column-gap: 30px;
     }
+
+    
 }
 
-@media(max-width:850px){
+@media(max-width:700px){
     .paragraph{
         width: 600px;
     }
 
-    .skills{
+    .skills,.skills2{
         grid-template-columns: repeat(2 , 1fr);
+        gap: 15px;
+        column-gap: 15px;
 
     }
-}
 
-@media(max-width:650px){
+    .aboutPage{
+        margin: 0;
+    }
+
     .paragraph{
         width: 350px;
         margin-bottom: 30px;
@@ -140,18 +213,47 @@ border-radius: 20px;
         height: 600px;
     }
 
-    .skills{
+    .skills1,.skills2{
         margin: 20px 0;
+        margin-top:20px ;
         display: flex;
         flex-direction: column;
     }
+
     .Title{
-        margin: 10px 0;
-        font-size: 200%;
+        font-size: 20px;
+        margin-left: 10px;
     }
 
     .me{
         margin-top: 50px;
+    }
+
+    .page{
+        font-size: 250%;
+        align-items: center;
+        position: relative;
+        top: 50px;
+        margin-left: 50px;
+        font-weight: bolder;
+        color: rgb(228, 66, 66);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    
+    .page span{
+        color: rgb(70, 43, 226);
+        margin-left: 5px;
+    }
+
+    .line{
+        position: absolute;
+        background: linear-gradient(rgb(255, 255, 255),rgb(195, 8, 8),rgb(16, 123, 200),rgb(255, 255, 255));
+        color: transparent;
+        top: 100px;
+        width: 50%;
+        margin-left: 175px;
+        height: 1px;
+        animation: rgb 2.5s infinite reverse;
     }
 }
 
