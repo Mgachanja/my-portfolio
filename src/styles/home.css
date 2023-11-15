@@ -33,9 +33,7 @@
 
 .intro{
     position: relative;
-    top: 5%;
-    transform: translate( 0 ,10%);
-    margin: 0 225px;
+    transform: translate( 10% ,5%);
     padding: 0 0px 500px 0;
 
 }
