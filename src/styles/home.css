@@ -136,16 +136,16 @@
     }
 
     .profession .full{
-        font-size: 70px;
+        font-size: 75px;
         line-height: 55px;
     }
 
     .profession .stack{
-        font-size: 65px;
+        font-size: 58px;
     }
 
     .profession .dev{
-        font-size: 20px;
+        font-size: 33px;
     }
 }
 
