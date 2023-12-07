@@ -10,7 +10,11 @@
 }
 
 .mySkills{
-    margin-left: 50px;
+    align-items: center;
+    justify-items: center;
+    margin: 85px;
+    display: flex;
+    flex-direction: column;
 }
 
 .page{
