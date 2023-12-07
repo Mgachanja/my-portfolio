@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import '../styles/about.css'
 import {motion} from 'framer-motion'
 import { me, mySkills,other } from '../helpers/Me'
