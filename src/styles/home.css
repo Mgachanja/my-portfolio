@@ -151,7 +151,7 @@
 
 @media(max-width:767px){
     .intro{
-        margin: 0 20px;
+        margin: 0 20 0 20px;
     }
 
     .name{
