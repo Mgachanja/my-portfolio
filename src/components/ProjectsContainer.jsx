@@ -1,20 +1,16 @@
 import React from 'react'
-import image from '../assets/homecontent.jpg'
 import '../styles/projectContainer.css'
-function ProjectsContainer() {
+import { Link } from 'react-router-dom'
+function ProjectsContainer({title,image,description,link}) {
   return (
     <div className='pContainer'>
-        <h3>project title</h3>
+        <h3>{title}</h3>
         <div className='imgContainer'>
             <img src={`${image}`} alt=''></img>
         </div>
         <div className='description'>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-          mollitia, molestiae quas vel sint commodi repudiandae consequuntur
-          voluptatum laborum numquam blanditiis harum quisquam eius sed odit
-          fugiat iusto fuga praesentium optio, eaque rerum!
-          </p>
-          <p a className='section' href='www.'>check out the code for this project on my github!!</p>
+        <p>{description}</p>
+         <a href={link} className='section' >check out the code for this project on my github!!</a>
         </div>
     </div>
   )

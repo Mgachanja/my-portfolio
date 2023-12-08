@@ -1,6 +1,6 @@
 .pContainer{
     width: 615px;
-    height: 780px;
+    height: auto;
     border-width: 2px;
     border-style: solid;
     border-color: azure;

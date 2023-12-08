@@ -15,6 +15,9 @@ import ai from '../assets/ai.jpg'
 import ml from '../assets/ml.jpeg'
 import py from '../assets/py.jpg'
 import dsa from '../assets/dsa.jpg'
+import netflix from '../assets/netflix.png'
+import goals from '../assets/goals app.png'
+import pizza from '../assets/pizza shop.png'
 
 
 
@@ -113,7 +116,24 @@ export const mySkills=[
         Image:dsa,
         TechName:'Data structures and algorithms'
     }
+]
 
+export const projects=[
+    {   title:"online pizza shop",
+        Image:pizza,
+        description:"The React-based pizza shop website I crafted is a static, uncomplicated platform. It exhibits a straightforward design, presenting pizzas with basic details. The user-friendly interface ensures simplicity, allowing easy navigation and straightforward online ordering for a hassle-free experience.",
+        link:"https://github.com/Mgachanja/pizza-shop"
+    },{
+        title:'goals app',
+        Image:goals,
+        description:'The MERN stack Goals app, integrated with Redux, offers a dynamic experience. Featuring MongoDB, Express, React, and Node.js, it provides seamless goal management. Redux enhances state management, ensuring a responsive and organized interface for users to set, track, and achieve their goals effortlessly.',
+        link:'https://github.com/Mgachanja/frontend-authentication'
+    },{
+        title:'netflix clone',
+        Image:netflix,
+        description:'The evolving Netflix clone, a MERN app in development, taps into the Movie Database API for a vast array of films. Merging MongoDB, Express, React, and Node.js, it promises a rich cinematic experience. Real-time updates from the API, coupled with a dynamic React interface, form the backbone of this streaming work-in-progress.',
+        link:"https://github.com/Mgachanja/netflix-clone"
+    }
 ]
 
     
