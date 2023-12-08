@@ -22,13 +22,13 @@ function Contact() {
     <div className='contactsPage'>
     <h1 id='title'>talk to me</h1>
       <div className='sendMessage'>
-        <form className='SendEmail' method='POST' onSubmit={sendEmail}>
+        <form className='SendEmail' ref={form} method='POST' onSubmit={sendEmail}>
           <label htmlFor='name'>full Name</label>
           <input className='inputs' id='name' name='from_name' placeholder='Enter Full Name ...' type='Text'/>
           <label htmlFor='email'>Email</label>
           <input className='inputs' id='email' name='from_email' placeholder='Enter Your Email ...' type='email'></input>
           <label htmlFor='message'>Message</label>
-          <textarea rows='6' placeholder='Enter Massage ...' id='message'
+          <textarea rows='10' placeholder='Enter Massage ...' id='message'
           name='message' required>
           </textarea>
           <button type='submit'>Send Message</button>
