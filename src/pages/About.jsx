@@ -15,9 +15,6 @@ function About() {
     <div className='line'></div>
       <div className='me'>
         <motion.div
-          initial={{ opacity: 0, y:'-100%'}}
-            whileInView={{opacity:1 ,y:0 }}
-            transition={{ duration: 1.5 }} 
          className='paragraph' >
         {
           me.map((item,index)=>
@@ -30,7 +27,7 @@ function About() {
         </motion.div>
       </div>
       <div className='mySkills'>
-        <h3 className='Title'>my skills</h3>
+        <h1 className='Title'>my skills</h1>
         <motion.div
             initial={{ opacity: 0, x: '-100%'}}
             whileInView={{opacity:1 ,x:0 }}
@@ -43,7 +40,7 @@ function About() {
           )
         }
         </motion.div>
-        <h1 className='Title'>learning the following skills currently :</h1>
+        <h2 className='Title'>learning the following skills currently :</h2>
         <motion.div 
          initial={{ opacity: 0, x: '100%', }}
             whileInView={{opacity:1 ,x:0,}}
