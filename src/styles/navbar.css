@@ -75,8 +75,7 @@
 
 .showMobileMenu{
     position: fixed;
-    top:5%;
-    width: 45%;
+    width: 100%;
     left: 0;
     background-color: black;
     z-index: 899;
