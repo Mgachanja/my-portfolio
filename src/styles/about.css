@@ -12,7 +12,6 @@
 .mySkills{
     align-items: center;
     justify-items: center;
-    margin: 85px;
     display: flex;
     flex-direction: column;
 }
@@ -99,6 +98,9 @@
     column-gap: 100px;
     gap: 50px;
 
+}
+.inputs{
+    color: rgb(219, 237, 237);
 }
 
 .btnProjects{

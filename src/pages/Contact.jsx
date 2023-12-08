@@ -28,7 +28,7 @@ function Contact() {
           <label htmlFor='email'>Email</label>
           <input className='inputs' id='email' name='from_email' placeholder='Enter Your Email ...' type='email'></input>
           <label htmlFor='message'>Message</label>
-          <textarea rows='10' placeholder='Enter Massage ...' id='message'
+          <textarea rows='10' placeholder='Enter Message ...'
           name='message' required>
           </textarea>
           <button type='submit'>Send Message</button>
