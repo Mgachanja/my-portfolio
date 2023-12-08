@@ -5,10 +5,6 @@ import Skills from '../components/Skills'
 import { Link } from 'react-router-dom'
 
 function About() {
-
-  
-
-
   return (
     <div className='aboutPage'>
     <h1 className='page'>About<span>.</span></h1>

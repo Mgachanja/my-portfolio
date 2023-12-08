@@ -18,9 +18,9 @@
 }
 
 .page{
-    font-size: 400%;
+    font-size: 350%;
     align-items: center;
-    margin-left: 60px;
+    margin-left: 150px;
     font-weight: bolder;
     color: rgb(228, 66, 66);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -34,9 +34,9 @@
 .line{
     position: absolute;
     background: linear-gradient(90deg, rgb(255, 255, 255),rgb(195, 8, 8),rgb(16, 123, 200),rgb(255, 255, 255));
-    top: 100px;
+    top: 80px;
     width: 70%;
-    margin-left: 280px;
+    margin-left: 350px;
     height: 1px;
 }
 
@@ -80,9 +80,8 @@
 }
 
 .paragraph p{
-    padding: 10px 10px;
+    padding: 5px 10px;
     color: azure;
-    font-size: large;
 }
 
 .skills1,
