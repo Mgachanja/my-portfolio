@@ -121,7 +121,7 @@
     font-size: large;
 
 }
-@media(min-width:1224px){
+@media(max-width:1024px){
     .aboutPage{
         margin: 0;
     }
