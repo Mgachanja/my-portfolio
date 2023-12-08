@@ -1,5 +1,5 @@
 .skill{
-    width: 200px;
+    width: 150px;
     height: auto;
     border:2px;
     border-color: rgb(7, 94, 94);
@@ -11,8 +11,8 @@
 
 .skillsImg{
     border-radius: 20px;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
 }
 
 .skillsImg img{
