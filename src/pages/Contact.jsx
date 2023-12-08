@@ -13,7 +13,10 @@ function Contact() {
           console.log(result.text);
       }, (error) => {
           console.log(error.text);
-      });
+      })
+      .then(()=>{
+        alert('message sent successfully!!')
+      })
     }  
   
 

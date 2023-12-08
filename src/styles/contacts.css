@@ -65,6 +65,10 @@ textarea{
     display: none;
 }
 
+textarea{
+    color: aliceblue;
+}
+
 button{
     position:relative;
     width: 200px;
