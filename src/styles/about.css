@@ -1,7 +1,7 @@
 .aboutPage{
     width: auto;
     height: auto;
-    margin-left: 65px;
+    margin-left: 60px;
     background-color: black;  
     display: flex;  
     flex-direction: column;
