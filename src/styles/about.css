@@ -20,7 +20,7 @@
 .page{
     font-size: 350%;
     align-items: center;
-    margin-left: 150px;
+    margin-left: 125px;
     font-weight: bolder;
     color: rgb(228, 66, 66);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -35,7 +35,7 @@
     position: absolute;
     background: linear-gradient(90deg, rgb(255, 255, 255),rgb(195, 8, 8),rgb(16, 123, 200),rgb(255, 255, 255));
     top: 80px;
-    width: 70%;
+    width: 60%;
     margin-left: 350px;
     height: 1px;
 }
