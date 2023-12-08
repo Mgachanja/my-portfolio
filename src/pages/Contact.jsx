@@ -1,20 +1,34 @@
-import React from 'react'
+import React,{useRef} from 'react'
 import '../styles/contacts.css'
 import { GitHub, Instagram, LinkedIn, Twitter, WavingHand, WhatsApp,} from '@mui/icons-material'
-
-
+import emailjs from '@emailjs/browser';
 function Contact() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_edtnxoo', 'template_7rnnwjj', form.current, 'kqngMplhGlZa0HLim')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+    }  
+  
+
+
   return (
     <div className='contactsPage'>
     <h1 id='title'>talk to me</h1>
       <div className='sendMessage'>
-        <form className='SendEmail' method='POST'>
+        <form className='SendEmail' method='POST' onSubmit={sendEmail}>
           <label htmlFor='name'>full Name</label>
-          <input className='inputs' name='name' placeholder='Enter Full Name ...' type='Text'/>
+          <input className='inputs' id='name' name='from_name' placeholder='Enter Full Name ...' type='Text'/>
           <label htmlFor='email'>Email</label>
-          <input className='inputs' name='email' placeholder='Enter Your Email ...' type='email'></input>
+          <input className='inputs' id='email' name='from_email' placeholder='Enter Your Email ...' type='email'></input>
           <label htmlFor='message'>Message</label>
-          <textarea rows='6' placeholder='Enter Massage ...'
+          <textarea rows='6' placeholder='Enter Massage ...' id='message'
           name='message' required>
           </textarea>
           <button type='submit'>Send Message</button>
@@ -54,6 +68,6 @@ function Contact() {
         </div>
     </div>
   )
-}
+  }
 
 export default Contact
