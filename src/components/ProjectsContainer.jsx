@@ -1,6 +1,5 @@
 import React from 'react'
 import '../styles/projectContainer.css'
-import { Link } from 'react-router-dom'
 function ProjectsContainer({title,image,description,link}) {
   return (
     <div className='pContainer'>
