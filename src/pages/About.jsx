@@ -14,7 +14,11 @@ function About() {
     <h1 className='page'>About<span>.</span></h1>
     <div className='line'></div>
       <div className='me'>
-        <div className='paragraph' >
+        <motion.div
+          initial={{ opacity: 0, y:'-100%'}}
+            whileInView={{opacity:1 ,y:0 }}
+            transition={{ duration: 1.5 }} 
+         className='paragraph' >
         {
           me.map((item,index)=>
             <div key={index}>
@@ -23,14 +27,14 @@ function About() {
             </div>
           )
         }
-        </div>
+        </motion.div>
       </div>
       <div className='mySkills'>
-        <h1 className='Title'>my skills</h1>
+        <h3 className='Title'>my skills</h3>
         <motion.div
-            initial={{ opacity: 0, x: '-100%',}}
-            whileInView={{opacity:1 ,x:0 ,}}
-            transition={{ duration: 1, }}    
+            initial={{ opacity: 0, x: '-100%'}}
+            whileInView={{opacity:1 ,x:0 }}
+            transition={{ duration: 2 }}    // Animation duration
         
          className='skills1'>
 
@@ -41,9 +45,9 @@ function About() {
         </motion.div>
         <h1 className='Title'>learning the following skills currently :</h1>
         <motion.div 
-         initial={{ opacity: 0, x: '-100%', }}
-            whileInView={{opacity:1 ,x:0, }}
-            transition={{ duration: 1,}}
+         initial={{ opacity: 0, x: '100%', }}
+            whileInView={{opacity:1 ,x:0,}}
+            transition={{ duration: 2 }}
         className='skills2'>
         {other.map((item)=>
         <Skills img={`${item.Image}`} name={item.TechName}/>

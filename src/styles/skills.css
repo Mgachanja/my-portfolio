@@ -1,20 +1,18 @@
 .skill{
-    width: 175px;
+    width: 200px;
     height: auto;
     border:2px;
-    border-color: azure;
+    border-color: rgb(7, 94, 94);
     border-style: solid;
     border-radius: 10px;
     display: grid;
     padding: 10px;
 }
 
-
-
 .skillsImg{
     border-radius: 20px;
-    width: 175px;
-    height: 175px;
+    width: 200px;
+    height: 200px;
 }
 
 .skillsImg img{
@@ -26,7 +24,7 @@
 .skillsName p{
     font-size: 150%;
     font-weight: bold;
-    color: azure;
+    color: rgb(78, 233, 43);
 }
 
 @media(max-width:700px){

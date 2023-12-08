@@ -95,9 +95,13 @@
     display: grid;
     grid-template-columns:repeat(5,0fr);
     place-items: center;
+<<<<<<< HEAD
     justify-items: center;
     gap: 100px;
     column-gap: 100px;
+=======
+    gap: 50px;
+>>>>>>> betterAboutPage
 }
 
 .btnProjects{
