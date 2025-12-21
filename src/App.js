@@ -1,17 +1,16 @@
+// src/App.js
 import React, { useState, useEffect, useRef } from 'react';
 import { 
   AppBar, Toolbar, Typography, Button, Container, Grid, Card, 
-  CardContent, CardMedia, TextField, Box, IconButton, Paper,
-  Tooltip, CardActions, Fab, CircularProgress, Divider, Chip
+  CardContent, CardMedia, Box, IconButton, Paper,
+  Tooltip, CardActions, Fab, Divider, Chip
 } from '@mui/material';
 import { 
   Email as EmailIcon,
   Phone as PhoneIcon,
-  LinkedIn as LinkedInIcon,
   GitHub as GitHubIcon,
   Description as DescriptionIcon,
   KeyboardArrowUp as KeyboardArrowUpIcon,
-  Send as SendIcon,
   ShoppingCart as ShoppingCartIcon,
   LocalShipping as LocalShippingIcon,
   Computer as ComputerIcon,
@@ -21,11 +20,12 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
+// Import CV (place the PDF file inside src/assets/)
+import CV from './assets/Mark Gachanja Ngari CV.pdf';
+
 const App = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuHover, setMenuHover] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [formStatus, setFormStatus] = useState(null);
   const [activeSection, setActiveSection] = useState("home");
 
   // Refs for smooth scrolling and section tracking
@@ -45,19 +45,13 @@ const App = () => {
     { id: "contact", ref: contactRef }
   ];
 
-  // Form values
-  const [formValues, setFormValues] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-
   // Handle scroll event for nav shadow and active section
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
 
       sectionRefs.forEach(section => {
+        if (!section.ref.current) return;
         const rect = section.ref.current.getBoundingClientRect();
         if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
           setActiveSection(section.id);
@@ -66,6 +60,8 @@ const App = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
+    // run once to set initial active
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -82,7 +78,7 @@ const App = () => {
         require('./assets/ecomerce4.jpeg'),
         require('./assets/ecomerce5.jpeg')
       ],
-      link: "https://github.com/markngari",
+      link: "https://github.com/mgachanja",
       tags: ["React Native", "iOS", "Android", "E-Commerce"],
       icon: <ShoppingCartIcon />,
       isMobile: true
@@ -98,7 +94,7 @@ const App = () => {
         require('./assets/delivery4.jpeg'),
         require('./assets/delivery5.jpeg')
       ],
-      link: "https://github.com/markngari",
+      link: "https://github.com/mgachanja",
       tags: ["React Native", "Android", "Logistics", "GPS"],
       icon: <LocalShippingIcon />,
       isMobile: true
@@ -108,7 +104,7 @@ const App = () => {
       title: "E-Commerce Web Platform",
       description: "Comprehensive web application for desktop shopping with integrated admin panel. Includes inventory management, order processing, analytics dashboard, and customer relationship management tools.",
       image: "/api/placeholder/400/200",
-      link: "https://github.com/markngari",
+      link: "https://github.com/mgachanja",
       tags: ["React", "Admin Panel", "Web App", "Dashboard"],
       icon: <ComputerIcon />,
       isMobile: false
@@ -118,7 +114,7 @@ const App = () => {
       title: "POS Desktop System",
       description: "Point-of-sale desktop application built with React Native and Electron. Manages in-store transactions, inventory, order synchronization from mobile and web platforms, and provides comprehensive sales analytics.",
       image: "/api/placeholder/400/200",
-      link: "https://github.com/markngari",
+      link: "https://github.com/mgachanja",
       tags: ["Electron", "React Native", "POS", "Desktop"],
       icon: <PointOfSaleIcon />,
       isMobile: false
@@ -168,32 +164,9 @@ const App = () => {
 
   // Smooth scroll function
   const scrollToSection = (ref) => {
-    ref.current.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  // Handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setLoading(true);
-    
-    setTimeout(() => {
-      setLoading(false);
-      setFormStatus('success');
-      setFormValues({ name: '', email: '', message: '' });
-      
-      setTimeout(() => {
-        setFormStatus(null);
-      }, 3000);
-    }, 1500);
-  };
-
-  // Handle form input changes
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormValues(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    if (ref && ref.current) {
+      ref.current.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   // Create a dark theme with full black background
@@ -255,30 +228,18 @@ const App = () => {
         <header className="floating-nav custom-nav">
           <nav className="navbar navbar-expand-lg navbar-dark">
             <div className="container-fluid justify-content-between">
-              <a className="navbar-brand" href="#home">🚀 Mark</a>
+              <a className="navbar-brand" href="#home">Mark</a>
               <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span className="navbar-toggler-icon"></span>
               </button>
               <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul className="navbar-nav">
-                  <li className="nav-item">
-                    <a className="nav-link" href="#home">Home</a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#skills">Skills</a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#projects">Projects</a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#research">Research</a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#experience">Experience</a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#contact">Contact</a>
-                  </li>
+                  <li className="nav-item"><a className="nav-link" href="#home">Home</a></li>
+                  <li className="nav-item"><a className="nav-link" href="#skills">Skills</a></li>
+                  <li className="nav-item"><a className="nav-link" href="#projects">Projects</a></li>
+                  <li className="nav-item"><a className="nav-link" href="#research">Research</a></li>
+                  <li className="nav-item"><a className="nav-link" href="#experience">Experience</a></li>
+                  <li className="nav-item"><a className="nav-link" href="#contact">Contact</a></li>
                 </ul>
               </div>
             </div>
@@ -350,18 +311,26 @@ const App = () => {
                   </Button>
                 </Box>
                 <Box mt={4} display="flex" gap={2}>
-                  <Tooltip title="LinkedIn">
-                    <IconButton color="primary" className="social-icon">
-                      <LinkedInIcon />
-                    </IconButton>
-                  </Tooltip>
                   <Tooltip title="GitHub">
-                    <IconButton color="primary" className="social-icon">
+                    <IconButton
+                      color="primary"
+                      className="social-icon"
+                      component="a"
+                      href="https://github.com/Mgachanja"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <GitHubIcon />
                     </IconButton>
                   </Tooltip>
                   <Tooltip title="Download CV">
-                    <IconButton color="primary" className="social-icon">
+                    <IconButton
+                      color="primary"
+                      className="social-icon"
+                      component="a"
+                      href={CV}
+                      download="Mark_Gachanja_Ngari_CV.pdf"
+                    >
                       <DescriptionIcon />
                     </IconButton>
                   </Tooltip>
@@ -481,6 +450,7 @@ const App = () => {
                         color="primary" 
                         href={project.link}
                         target="_blank"
+                        rel="noopener noreferrer"
                         className="project-button"
                       >
                         View Details
@@ -584,29 +554,19 @@ const App = () => {
         {/* Experience Section */}
         <section id="experience" ref={experienceRef} style={{ minHeight: 'auto', paddingTop: '80px', paddingBottom: '80px' }}>
           <Container maxWidth="lg">
-            <Typography variant="h3" className="section-title">
-              Professional Experience
-            </Typography>
+            <Typography variant="h3" className="section-title">Professional Experience</Typography>
             <Paper className="experience-card">
               <Box p={4}>
-                <Typography variant="h5" gutterBottom>
-                  Software Developer
-                </Typography>
-                <Typography variant="subtitle1" gutterBottom>
-                  Cenco Consultaria
-                </Typography>
+                <Typography variant="h5" gutterBottom>Software Developer</Typography>
+                <Typography variant="subtitle1" gutterBottom>Cenco Consultaria</Typography>
                 <Box className="timeline-indicator">
-                  <Typography variant="body2" className="timeline-date">
-                    March 2024 - Present
-                  </Typography>
+                  <Typography variant="body2" className="timeline-date">March 2024 - Present</Typography>
                 </Box>
                 <Typography variant="body1" paragraph>
                   Started as an intern and was offered a full-time position after demonstrating strong
                   technical capabilities and delivering significant value to legacy systems modernization.
                 </Typography>
-                <Typography variant="body1" sx={{ fontWeight: 600, mt: 2, mb: 1 }}>
-                  Key Achievements:
-                </Typography>
+                <Typography variant="body1" sx={{ fontWeight: 600, mt: 2, mb: 1 }}>Key Achievements:</Typography>
                 <ul className="responsibility-list">
                   <li>Migrated two critical legacy React applications from versions 16 and 17 to React 18, incorporating TypeScript for enhanced type safety and maintainability</li>
                   <li>Successfully upgraded enterprise mobile application from React Native 0.79 to 0.76, resolving breaking changes and improving performance</li>
@@ -623,52 +583,57 @@ const App = () => {
         {/* Contact Section */}
         <section id="contact" ref={contactRef} style={{ minHeight: 'auto', paddingTop: '80px', paddingBottom: '80px' }}>
           <Container maxWidth="lg">
-            <Typography variant="h3" className="section-title">
-              Contact Me
-            </Typography>
+            <Typography variant="h3" className="section-title">Contact Me</Typography>
             <Grid container spacing={6}>
               <Grid item xs={12} md={6}>
                 <Paper className="contact-info-card">
                   <Box p={4}>
-                    <Typography variant="h5" gutterBottom>
-                      Get In Touch
-                    </Typography>
+                    <Typography variant="h5" gutterBottom>Get In Touch</Typography>
                     <Typography variant="body1" paragraph>
                       Have a project in mind or want to discuss potential opportunities? 
                       Feel free to reach out!
                     </Typography>
                     
                     <Box display="flex" alignItems="center" mb={2}>
-                      <IconButton color="primary" size="large">
+                      <IconButton
+                        color="primary"
+                        size="large"
+                        component="a"
+                        href="mailto:ngarimarkgachanja@gmail.com"
+                      >
                         <EmailIcon />
                       </IconButton>
-                      <Typography variant="body1">
-                        mark.ngari@example.com
-                      </Typography>
+                      <Typography variant="body1">ngarimarkgachanja@gmail.com</Typography>
                     </Box>
                     
                     <Box display="flex" alignItems="center">
                       <IconButton color="primary" size="large">
                         <PhoneIcon />
                       </IconButton>
-                      <Typography variant="body1">
-                        +254 700 000 000
-                      </Typography>
+                      <Typography variant="body1">+254 768212567</Typography>
                     </Box>
                     
                     <Box mt={4} display="flex" gap={2}>
-                      <Tooltip title="LinkedIn">
-                        <IconButton color="primary" className="social-icon">
-                          <LinkedInIcon />
-                        </IconButton>
-                      </Tooltip>
                       <Tooltip title="GitHub">
-                        <IconButton color="primary" className="social-icon">
+                        <IconButton
+                          color="primary"
+                          className="social-icon"
+                          component="a"
+                          href="https://github.com/Mgachanja"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           <GitHubIcon />
                         </IconButton>
                       </Tooltip>
                       <Tooltip title="Download CV">
-                        <IconButton color="primary" className="social-icon">
+                        <IconButton
+                          color="primary"
+                          className="social-icon"
+                          component="a"
+                          href={CV}
+                          download="Mark_Gachanja_Ngari_CV.pdf"
+                        >
                           <DescriptionIcon />
                         </IconButton>
                       </Tooltip>
@@ -676,85 +641,15 @@ const App = () => {
                   </Box>
                 </Paper>
               </Grid>
-              <Grid item xs={12} md={6}>
-                <Paper className="contact-form-card">
-                  <Box p={4}>
-                    <Typography variant="h5" gutterBottom>
-                      Send Me a Message
-                    </Typography>
-                    <form onSubmit={handleSubmit}>
-                      <TextField
-                        fullWidth
-                        label="Your Name"
-                        variant="outlined"
-                        margin="normal"
-                        name="name"
-                        value={formValues.name}
-                        onChange={handleChange}
-                        required
-                        className="form-input"
-                      />
-                      <TextField
-                        fullWidth
-                        label="Your Email"
-                        variant="outlined"
-                        margin="normal"
-                        name="email"
-                        type="email"
-                        value={formValues.email}
-                        onChange={handleChange}
-                        required
-                        className="form-input"
-                      />
-                      <TextField
-                        fullWidth
-                        label="Your Message"
-                        variant="outlined"
-                        margin="normal"
-                        name="message"
-                        multiline
-                        rows={4}
-                        value={formValues.message}
-                        onChange={handleChange}
-                        required
-                        className="form-input"
-                      />
-                      <Box mt={2}>
-                        <Button
-                          type="submit"
-                          variant="contained"
-                          color="primary"
-                          size="large"
-                          disabled={loading}
-                          endIcon={loading ? <CircularProgress size={20} /> : <SendIcon />}
-                          className="send-button"
-                        >
-                          {loading ? 'Sending...' : 'Send Message'}
-                        </Button>
-                        {formStatus === 'success' && (
-                          <Typography 
-                            variant="body2" 
-                            color="primary" 
-                            sx={{ mt: 2 }}
-                          >
-                            Message sent successfully! I'll get back to you soon.
-                          </Typography>
-                        )}
-                      </Box>
-                    </form>
-                  </Box>
-                </Paper>
-              </Grid>
+
+              {/* Removed contact form per request */}
             </Grid>
           </Container>
         </section>
 
-        {/* Footer */}
         <footer className="footer">
           <Container>
-            <Typography variant="body2" align="center" className="light-font">
-              © {new Date().getFullYear()} Mark Gachanja Ngari. All rights reserved.
-            </Typography>
+            <Typography variant="body2" align="center" className="light-font">© {new Date().getFullYear()} Mark Gachanja Ngari. All rights reserved.</Typography>
           </Container>
         </footer>
       </div>
@@ -820,7 +715,7 @@ const SideTracker = ({ activeSection, scrollToSection, refs }) => {
           zIndex: -1
         }}
       />
-      {navItems.map((item, index) => (
+      {navItems.map((item) => (
         <Box key={item.id} sx={{ py: 2.5 }}>
           <Tooltip title={item.label} placement="left">
             <Box
@@ -844,15 +739,16 @@ const SideTracker = ({ activeSection, scrollToSection, refs }) => {
                 border: hoveredSection === item.id ? "2px solid" : "none",
                 borderColor: "primary.main",
                 '&:hover': {
-                bgcolor: activeSection === item.id ? "primary.main" : "primary.dark",
-                transform: "scale(1.3)",
+                  bgcolor: activeSection === item.id ? "primary.main" : "primary.dark",
+                  transform: "scale(1.3)",
                 }
-                }}
-                />
-                </Tooltip>
-                </Box>
-                ))}
-                </Box>
-                );
-                };
-                export default App;
+              }}
+            />
+          </Tooltip>
+        </Box>
+      ))}
+    </Box>
+  );
+};
+
+export default App;
