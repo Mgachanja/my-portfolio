@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useState, useEffect, useRef } from 'react';
 import { 
   AppBar, Toolbar, Typography, Button, Container, Grid, Card, 
@@ -20,15 +19,10 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-// Import CV (place the PDF file inside src/assets/)
-import CV from './assets/Mark Gachanja Ngari CV.pdf';
-
 const App = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [menuHover, setMenuHover] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
 
-  // Refs for smooth scrolling and section tracking
   const homeRef = useRef(null);
   const skillsRef = useRef(null);
   const projectsRef = useRef(null);
@@ -45,7 +39,6 @@ const App = () => {
     { id: "contact", ref: contactRef }
   ];
 
-  // Handle scroll event for nav shadow and active section
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -60,12 +53,10 @@ const App = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
-    // run once to set initial active
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Projects data
   const projects = [
     {
       id: 1,
@@ -121,7 +112,6 @@ const App = () => {
     }
   ];
 
-  // Research/POC data
   const researchProjects = [
     {
       id: 1,
@@ -145,7 +135,6 @@ const App = () => {
     }
   ];
 
-  // Skills data
   const skills = [
     { name: "JavaScript", level: 90 },
     { name: "React", level: 85 },
@@ -162,14 +151,12 @@ const App = () => {
     { name: "UI/UX Design", level: 85 }
   ];
 
-  // Smooth scroll function
   const scrollToSection = (ref) => {
     if (ref && ref.current) {
       ref.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
-  // Create a dark theme with full black background
   const theme = createTheme({
     palette: {
       mode: 'dark',
@@ -221,10 +208,8 @@ const App = () => {
           <div className="stars stars-large"></div>
         </div>
 
-        {/* Starship Cursor */}
         <StarshipCursor />
 
-        {/* Floating Navigation */}
         <header className="floating-nav custom-nav">
           <nav className="navbar navbar-expand-lg navbar-dark">
             <div className="container-fluid justify-content-between">
@@ -246,14 +231,12 @@ const App = () => {
           </nav>
         </header>
 
-        {/* Side Tracker */}
         <SideTracker 
           activeSection={activeSection} 
           scrollToSection={scrollToSection} 
           refs={{ homeRef, skillsRef, projectsRef, researchRef, experienceRef, contactRef }} 
         />
 
-        {/* Back to Top Button */}
         <Fab 
           color="primary" 
           size="medium" 
@@ -270,15 +253,14 @@ const App = () => {
           <KeyboardArrowUpIcon />
         </Fab>
 
-        {/* Home Section */}
         <section id="home" ref={homeRef} style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', paddingTop: '80px', paddingBottom: '80px' }}>
           <Container maxWidth="lg">
             <Grid container spacing={4} alignItems="center">
               <Grid item xs={12} md={6} className="animated-content">
-                <Typography variant="h2" className="glow-text">
+                <Typography variant="h2" className="glow-text" sx={{ fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' } }}>
                   Mark Gachanja Ngari
                 </Typography>
-                <Typography variant="h4" className="subtitle">
+                <Typography variant="h4" className="subtitle" sx={{ fontSize: { xs: '1.25rem', sm: '1.5rem', md: '2rem' } }}>
                   Software Developer & Technical Architect
                 </Typography>
                 <Box mt={3}>
@@ -290,13 +272,14 @@ const App = () => {
                     integrated systems—that solve real business problems and scale with organizational growth.
                   </Typography>
                 </Box>
-                <Box mt={4} display="flex" gap={2}>
+                <Box mt={4} display="flex" gap={2} flexDirection={{ xs: 'column', sm: 'row' }}>
                   <Button 
                     variant="contained" 
                     color="primary" 
                     size="large"
                     onClick={() => scrollToSection(projectsRef)}
                     className="glow-button"
+                    fullWidth={{ xs: true, sm: false }}
                   >
                     View Projects
                   </Button>
@@ -306,11 +289,12 @@ const App = () => {
                     size="large"
                     onClick={() => scrollToSection(contactRef)}
                     className="outline-glow-button"
+                    fullWidth={{ xs: true, sm: false }}
                   >
                     Contact Me
                   </Button>
                 </Box>
-                <Box mt={4} display="flex" gap={2}>
+                <Box mt={4} display="flex" gap={2} justifyContent={{ xs: 'center', md: 'flex-start' }}>
                   <Tooltip title="GitHub">
                     <IconButton
                       color="primary"
@@ -327,9 +311,6 @@ const App = () => {
                     <IconButton
                       color="primary"
                       className="social-icon"
-                      component="a"
-                      href={CV}
-                      download="Mark_Gachanja_Ngari_CV.pdf"
                     >
                       <DescriptionIcon />
                     </IconButton>
@@ -340,7 +321,7 @@ const App = () => {
                 <div className="profile-image-wrapper">
                   <img 
                     src="/api/placeholder/400/400" 
-                    alt="Mark Gachanja Ngari - Software Developer" 
+                    alt="Mark Gachanja Ngari" 
                     className="profile-image" 
                   />
                 </div>
@@ -349,7 +330,6 @@ const App = () => {
           </Container>
         </section>
 
-        {/* Skills Section */}
         <section id="skills" ref={skillsRef} style={{ minHeight: 'auto', paddingTop: '80px', paddingBottom: '80px' }}>
           <Container maxWidth="lg">
             <Typography variant="h3" className="section-title">
@@ -357,10 +337,10 @@ const App = () => {
             </Typography>
             <Grid container spacing={4} className="skills-container">
               {skills.map((skill, index) => (
-                <Grid item xs={12} sm={6} md={3} key={index}>
+                <Grid item xs={6} sm={4} md={3} key={index}>
                   <Paper className="skill-card">
                     <Box p={3}>
-                      <Typography variant="h6" gutterBottom>
+                      <Typography variant="h6" gutterBottom sx={{ fontSize: { xs: '0.9rem', sm: '1rem', md: '1.25rem' } }}>
                         {skill.name}
                       </Typography>
                       <Box className="skill-bar-container">
@@ -380,7 +360,6 @@ const App = () => {
           </Container>
         </section>
 
-        {/* Projects Section */}
         <section id="projects" ref={projectsRef} style={{ minHeight: 'auto', paddingTop: '80px', paddingBottom: '80px' }}>
           <Container maxWidth="lg">
             <Typography variant="h3" className="section-title">
@@ -391,17 +370,17 @@ const App = () => {
             </Typography>
             <Grid container spacing={4}>
               {projects.map((project) => (
-                <Grid item xs={12} md={6} key={project.id}>
+                <Grid item xs={12} sm={6} key={project.id}>
                   <Card className="project-card" sx={{ height: '100%' }}>
                     <Box sx={{ p: 2, display: 'flex', alignItems: 'center', gap: 2, bgcolor: 'rgba(123, 104, 238, 0.1)' }}>
                       {project.icon}
-                      <Typography variant="h6">{project.title}</Typography>
+                      <Typography variant="h6" sx={{ fontSize: { xs: '1rem', md: '1.25rem' } }}>{project.title}</Typography>
                     </Box>
                     
                     {project.isMobile ? (
                       <Box 
                         sx={{ 
-                          height: 200,
+                          height: { xs: 150, sm: 180, md: 200 },
                           overflow: 'hidden',
                           display: 'flex',
                           bgcolor: '#000'
@@ -426,6 +405,7 @@ const App = () => {
                         height="300"
                         image={project.image}
                         alt={project.title}
+                        sx={{ height: { xs: 200, md: 300 } }}
                       />
                     )}
                     
@@ -463,7 +443,6 @@ const App = () => {
           </Container>
         </section>
 
-        {/* Research Section */}
         <section id="research" ref={researchRef} style={{ minHeight: 'auto', paddingTop: '80px', paddingBottom: '80px' }}>
           <Container maxWidth="lg">
             <Typography variant="h3" className="section-title">
@@ -473,9 +452,9 @@ const App = () => {
               Exploring cutting-edge web technologies and architectural patterns
             </Typography>
             {researchProjects.map((research) => (
-              <Paper key={research.id} sx={{ p: 4, mb: 3, bgcolor: 'rgba(19, 19, 54, 0.8)' }}>
-                <Box display="flex" justifyContent="space-between" alignItems="center" mb={2}>
-                  <Typography variant="h5" gutterBottom>
+              <Paper key={research.id} sx={{ p: { xs: 2, sm: 3, md: 4 }, mb: 3, bgcolor: 'rgba(19, 19, 54, 0.8)' }}>
+                <Box display="flex" flexDirection={{ xs: 'column', sm: 'row' }} justifyContent="space-between" alignItems={{ xs: 'flex-start', sm: 'center' }} mb={2} gap={2}>
+                  <Typography variant="h5" gutterBottom sx={{ fontSize: { xs: '1.25rem', md: '1.5rem' } }}>
                     {research.title}
                   </Typography>
                   <Chip 
@@ -551,12 +530,11 @@ const App = () => {
           </Container>
         </section>
 
-        {/* Experience Section */}
         <section id="experience" ref={experienceRef} style={{ minHeight: 'auto', paddingTop: '80px', paddingBottom: '80px' }}>
           <Container maxWidth="lg">
             <Typography variant="h3" className="section-title">Professional Experience</Typography>
             <Paper className="experience-card">
-              <Box p={4}>
+              <Box p={{ xs: 2, sm: 3, md: 4 }}>
                 <Typography variant="h5" gutterBottom>Software Developer</Typography>
                 <Typography variant="subtitle1" gutterBottom>Cenco Consultaria</Typography>
                 <Box className="timeline-indicator">
@@ -567,7 +545,7 @@ const App = () => {
                   technical capabilities and delivering significant value to legacy systems modernization.
                 </Typography>
                 <Typography variant="body1" sx={{ fontWeight: 600, mt: 2, mb: 1 }}>Key Achievements:</Typography>
-                <ul className="responsibility-list">
+                <ul className="responsibility-list" style={{ paddingLeft: { xs: '20px', md: '40px' } }}>
                   <li>Migrated two critical legacy React applications from versions 16 and 17 to React 18, incorporating TypeScript for enhanced type safety and maintainability</li>
                   <li>Successfully upgraded enterprise mobile application from React Native 0.79 to 0.76, resolving breaking changes and improving performance</li>
                   <li>Architected and implemented new features across existing projects using clean code principles and scalable design patterns</li>
@@ -580,21 +558,20 @@ const App = () => {
           </Container>
         </section>
 
-        {/* Contact Section */}
         <section id="contact" ref={contactRef} style={{ minHeight: 'auto', paddingTop: '80px', paddingBottom: '80px' }}>
           <Container maxWidth="lg">
             <Typography variant="h3" className="section-title">Contact Me</Typography>
-            <Grid container spacing={6}>
-              <Grid item xs={12} md={6}>
+            <Grid container spacing={6} justifyContent="center">
+              <Grid item xs={12} md={8}>
                 <Paper className="contact-info-card">
-                  <Box p={4}>
+                  <Box p={{ xs: 2, sm: 3, md: 4 }}>
                     <Typography variant="h5" gutterBottom>Get In Touch</Typography>
                     <Typography variant="body1" paragraph>
                       Have a project in mind or want to discuss potential opportunities? 
                       Feel free to reach out!
                     </Typography>
                     
-                    <Box display="flex" alignItems="center" mb={2}>
+                    <Box display="flex" flexDirection={{ xs: 'column', sm: 'row' }} alignItems={{ xs: 'flex-start', sm: 'center' }} mb={2} gap={{ xs: 1, sm: 0 }}>
                       <IconButton
                         color="primary"
                         size="large"
@@ -603,17 +580,17 @@ const App = () => {
                       >
                         <EmailIcon />
                       </IconButton>
-                      <Typography variant="body1">ngarimarkgachanja@gmail.com</Typography>
+                      <Typography variant="body1" sx={{ wordBreak: 'break-word' }}>ngarimarkgachanja@gmail.com</Typography>
                     </Box>
                     
-                    <Box display="flex" alignItems="center">
+                    <Box display="flex" flexDirection={{ xs: 'column', sm: 'row' }} alignItems={{ xs: 'flex-start', sm: 'center' }} gap={{ xs: 1, sm: 0 }}>
                       <IconButton color="primary" size="large">
                         <PhoneIcon />
                       </IconButton>
                       <Typography variant="body1">+254 768212567</Typography>
                     </Box>
                     
-                    <Box mt={4} display="flex" gap={2}>
+                    <Box mt={4} display="flex" gap={2} justifyContent={{ xs: 'center', md: 'flex-start' }}>
                       <Tooltip title="GitHub">
                         <IconButton
                           color="primary"
@@ -630,9 +607,6 @@ const App = () => {
                         <IconButton
                           color="primary"
                           className="social-icon"
-                          component="a"
-                          href={CV}
-                          download="Mark_Gachanja_Ngari_CV.pdf"
                         >
                           <DescriptionIcon />
                         </IconButton>
@@ -641,8 +615,6 @@ const App = () => {
                   </Box>
                 </Paper>
               </Grid>
-
-              {/* Removed contact form per request */}
             </Grid>
           </Container>
         </section>
@@ -657,7 +629,6 @@ const App = () => {
   );
 };
 
-// Starship Cursor Component
 const StarshipCursor = () => {
   const cursorRef = useRef(null);
 
@@ -677,7 +648,6 @@ const StarshipCursor = () => {
   return <div className="starship-cursor" ref={cursorRef}></div>;
 };
 
-// Side Tracker Component
 const SideTracker = ({ activeSection, scrollToSection, refs }) => {
   const [hoveredSection, setHoveredSection] = useState(null);
   
@@ -697,7 +667,7 @@ const SideTracker = ({ activeSection, scrollToSection, refs }) => {
         top: "50%",
         right: 30,
         transform: "translateY(-50%)",
-        display: "flex",
+        display: { xs: 'none', md: 'flex' },
         flexDirection: "column",
         alignItems: "center",
         gap: 0,
