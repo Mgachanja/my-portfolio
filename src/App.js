@@ -18,7 +18,7 @@ import {
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-
+import mark from "./assets/mark.jpg"
 const App = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
@@ -320,7 +320,7 @@ const App = () => {
               <Grid item xs={12} md={6} className="profile-container animated-content">
                 <div className="profile-image-wrapper">
                   <img 
-                    src="/api/placeholder/400/400" 
+                    src={mark}
                     alt="Mark Gachanja Ngari" 
                     className="profile-image" 
                   />
