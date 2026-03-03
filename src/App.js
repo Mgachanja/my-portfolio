@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { 
-   Typography, Button, Container, Grid, Card, 
+import {
+  Typography, Button, Container, Grid, Card,
   CardContent, CardMedia, Box, IconButton, Paper,
-  Tooltip, CardActions, Fab,Chip
+  Tooltip, CardActions, Fab, Chip
 } from '@mui/material';
-import { 
+import {
   Email as EmailIcon,
   Phone as PhoneIcon,
   GitHub as GitHubIcon,
@@ -30,16 +30,16 @@ const App = () => {
   const experienceRef = useRef(null);
   const contactRef = useRef(null);
 
-  const sectionRefs = [
-    { id: "home", ref: homeRef },
-    { id: "skills", ref: skillsRef },
-    { id: "projects", ref: projectsRef },
-    { id: "research", ref: researchRef },
-    { id: "experience", ref: experienceRef },
-    { id: "contact", ref: contactRef }
-  ];
-
   useEffect(() => {
+    const sectionRefs = [
+      { id: "home", ref: homeRef },
+      { id: "skills", ref: skillsRef },
+      { id: "projects", ref: projectsRef },
+      { id: "research", ref: researchRef },
+      { id: "experience", ref: experienceRef },
+      { id: "contact", ref: contactRef }
+    ];
+
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
 
@@ -231,15 +231,15 @@ const App = () => {
           </nav>
         </header>
 
-        <SideTracker 
-          activeSection={activeSection} 
-          scrollToSection={scrollToSection} 
-          refs={{ homeRef, skillsRef, projectsRef, researchRef, experienceRef, contactRef }} 
+        <SideTracker
+          activeSection={activeSection}
+          scrollToSection={scrollToSection}
+          refs={{ homeRef, skillsRef, projectsRef, researchRef, experienceRef, contactRef }}
         />
 
-        <Fab 
-          color="primary" 
-          size="medium" 
+        <Fab
+          color="primary"
+          size="medium"
           className="back-to-top"
           onClick={() => scrollToSection(homeRef)}
           sx={{
@@ -265,17 +265,17 @@ const App = () => {
                 </Typography>
                 <Box mt={3}>
                   <Typography variant="body1" className="intro-text">
-                    Delivering full-stack solutions that drive operational efficiency and market reach. 
-                    I architect digital platforms that reduce friction in customer acquisition, 
-                    streamline internal workflows, and generate measurable ROI. From conception through 
-                    deployment, I build complete ecosystems—web platforms, mobile applications, and 
+                    Delivering full-stack solutions that drive operational efficiency and market reach.
+                    I architect digital platforms that reduce friction in customer acquisition,
+                    streamline internal workflows, and generate measurable ROI. From conception through
+                    deployment, I build complete ecosystems—web platforms, mobile applications, and
                     integrated systems—that solve real business problems and scale with organizational growth.
                   </Typography>
                 </Box>
                 <Box mt={4} display="flex" gap={2} flexDirection={{ xs: 'column', sm: 'row' }}>
-                  <Button 
-                    variant="contained" 
-                    color="primary" 
+                  <Button
+                    variant="contained"
+                    color="primary"
                     size="large"
                     onClick={() => scrollToSection(projectsRef)}
                     className="glow-button"
@@ -283,9 +283,9 @@ const App = () => {
                   >
                     View Projects
                   </Button>
-                  <Button 
-                    variant="outlined" 
-                    color="secondary" 
+                  <Button
+                    variant="outlined"
+                    color="secondary"
                     size="large"
                     onClick={() => scrollToSection(contactRef)}
                     className="outline-glow-button"
@@ -319,10 +319,10 @@ const App = () => {
               </Grid>
               <Grid item xs={12} md={6} className="profile-container animated-content">
                 <div className="profile-image-wrapper">
-                  <img 
+                  <img
                     src={mark}
-                    alt="Mark Gachanja Ngari" 
-                    className="profile-image" 
+                    alt="Mark Gachanja Ngari"
+                    className="profile-image"
                   />
                 </div>
               </Grid>
@@ -344,8 +344,8 @@ const App = () => {
                         {skill.name}
                       </Typography>
                       <Box className="skill-bar-container">
-                        <Box 
-                          className="skill-bar" 
+                        <Box
+                          className="skill-bar"
                           sx={{ width: `${skill.level}%` }}
                         ></Box>
                       </Box>
@@ -376,10 +376,10 @@ const App = () => {
                       {project.icon}
                       <Typography variant="h6" sx={{ fontSize: { xs: '1rem', md: '1.25rem' } }}>{project.title}</Typography>
                     </Box>
-                    
+
                     {project.isMobile ? (
-                      <Box 
-                        sx={{ 
+                      <Box
+                        sx={{
                           height: { xs: 150, sm: 180, md: 200 },
                           overflow: 'hidden',
                           display: 'flex',
@@ -408,26 +408,26 @@ const App = () => {
                         sx={{ height: { xs: 200, md: 300 } }}
                       />
                     )}
-                    
+
                     <CardContent>
                       <Typography variant="body2" color="text.secondary" paragraph>
                         {project.description}
                       </Typography>
                       <Box display="flex" flexWrap="wrap" gap={1} mt={2}>
                         {project.tags.map((tag, index) => (
-                          <Chip 
-                            key={index} 
-                            label={tag} 
-                            size="small" 
+                          <Chip
+                            key={index}
+                            label={tag}
+                            size="small"
                             sx={{ bgcolor: 'rgba(123, 104, 238, 0.2)' }}
                           />
                         ))}
                       </Box>
                     </CardContent>
                     <CardActions>
-                      <Button 
-                        size="small" 
-                        color="primary" 
+                      <Button
+                        size="small"
+                        color="primary"
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -457,13 +457,13 @@ const App = () => {
                   <Typography variant="h5" gutterBottom sx={{ fontSize: { xs: '1.25rem', md: '1.5rem' } }}>
                     {research.title}
                   </Typography>
-                  <Chip 
-                    label={research.status} 
-                    color="primary" 
+                  <Chip
+                    label={research.status}
+                    color="primary"
                     sx={{ fontWeight: 600 }}
                   />
                 </Box>
-                
+
                 <Typography variant="body1" paragraph>
                   {research.description}
                 </Typography>
@@ -474,10 +474,10 @@ const App = () => {
                   </Typography>
                   <Box display="flex" flexWrap="wrap" gap={1}>
                     {research.technologies.map((tech, index) => (
-                      <Chip 
-                        key={index} 
-                        label={tech} 
-                        variant="outlined" 
+                      <Chip
+                        key={index}
+                        label={tech}
+                        variant="outlined"
                         color="primary"
                         size="small"
                       />
@@ -500,7 +500,7 @@ const App = () => {
                       ))}
                     </ul>
                   </Grid>
-                  
+
                   <Grid item xs={12} md={6}>
                     <Typography variant="h6" gutterBottom sx={{ color: 'secondary.main' }}>
                       Key Findings
@@ -567,10 +567,10 @@ const App = () => {
                   <Box p={{ xs: 2, sm: 3, md: 4 }}>
                     <Typography variant="h5" gutterBottom>Get In Touch</Typography>
                     <Typography variant="body1" paragraph>
-                      Have a project in mind or want to discuss potential opportunities? 
+                      Have a project in mind or want to discuss potential opportunities?
                       Feel free to reach out!
                     </Typography>
-                    
+
                     <Box display="flex" flexDirection={{ xs: 'column', sm: 'row' }} alignItems={{ xs: 'flex-start', sm: 'center' }} mb={2} gap={{ xs: 1, sm: 0 }}>
                       <IconButton
                         color="primary"
@@ -582,14 +582,14 @@ const App = () => {
                       </IconButton>
                       <Typography variant="body1" sx={{ wordBreak: 'break-word' }}>ngarimarkgachanja@gmail.com</Typography>
                     </Box>
-                    
+
                     <Box display="flex" flexDirection={{ xs: 'column', sm: 'row' }} alignItems={{ xs: 'flex-start', sm: 'center' }} gap={{ xs: 1, sm: 0 }}>
                       <IconButton color="primary" size="large">
                         <PhoneIcon />
                       </IconButton>
                       <Typography variant="body1">+254 768212567</Typography>
                     </Box>
-                    
+
                     <Box mt={4} display="flex" gap={2} justifyContent={{ xs: 'center', md: 'flex-start' }}>
                       <Tooltip title="GitHub">
                         <IconButton
@@ -650,7 +650,7 @@ const StarshipCursor = () => {
 
 const SideTracker = ({ activeSection, scrollToSection, refs }) => {
   const [hoveredSection, setHoveredSection] = useState(null);
-  
+
   const navItems = [
     { id: "home", label: "Home" },
     { id: "skills", label: "Skills" },
