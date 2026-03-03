@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { 
-  AppBar, Toolbar, Typography, Button, Container, Grid, Card, 
+   Typography, Button, Container, Grid, Card, 
   CardContent, CardMedia, Box, IconButton, Paper,
-  Tooltip, CardActions, Fab, Divider, Chip
+  Tooltip, CardActions, Fab,Chip
 } from '@mui/material';
 import { 
   Email as EmailIcon,
