@@ -18,7 +18,7 @@ import {
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import mark from "./assets/mark.jpg"
+import mark from "./assets/IMG_5018.jpg"
 const App = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
