@@ -19,9 +19,16 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import mark from "./assets/IMG_5018.jpg"
+import { CrawlIntro } from './remotion/CrawlIntro';
+
 const App = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const [showIntro, setShowIntro] = useState(true);
+
+  useEffect(() => {
+    document.body.style.overflow = showIntro ? 'hidden' : '';
+  }, [showIntro]);
 
   const homeRef = useRef(null);
   const skillsRef = useRef(null);
@@ -161,14 +168,14 @@ const App = () => {
     palette: {
       mode: 'dark',
       primary: {
-        main: '#7B68EE',
+        main: '#FFE81F',
       },
       secondary: {
-        main: '#9370DB',
+        main: '#4BD5EE',
       },
       background: {
         default: '#000000',
-        paper: '#131336',
+        paper: '#0c0c14',
       },
     },
     typography: {
@@ -192,7 +199,7 @@ const App = () => {
         styleOverrides: {
           root: {
             borderRadius: 12,
-            backgroundColor: 'rgba(19, 19, 54, 0.8)',
+            backgroundColor: 'rgba(12, 12, 18, 0.85)',
           },
         },
       },
@@ -201,6 +208,7 @@ const App = () => {
 
   return (
     <ThemeProvider theme={theme}>
+      {showIntro && <CrawlIntro onFinish={() => setShowIntro(false)} />}
       <div className="galaxy-background">
         <div className="stars-container">
           <div className="stars stars-small"></div>
@@ -257,6 +265,9 @@ const App = () => {
           <Container maxWidth="lg">
             <Grid container spacing={4} alignItems="center">
               <Grid item xs={12} md={6} className="animated-content">
+                <Typography variant="overline" sx={{ color: '#4BD5EE', letterSpacing: 3, display: 'block', mb: 1 }}>
+                  A long time ago, in a codebase far, far away...
+                </Typography>
                 <Typography variant="h2" className="glow-text" sx={{ fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' } }}>
                   Mark Gachanja Ngari
                 </Typography>
@@ -332,9 +343,7 @@ const App = () => {
 
         <section id="skills" ref={skillsRef} style={{ minHeight: 'auto', paddingTop: '80px', paddingBottom: '80px' }}>
           <Container maxWidth="lg">
-            <Typography variant="h3" className="section-title">
-              Skills & Expertise
-            </Typography>
+            <SectionHeading episode="EPISODE I" title="Skills & Training" />
             <Grid container spacing={4} className="skills-container">
               {skills.map((skill, index) => (
                 <Grid item xs={6} sm={4} md={3} key={index}>
@@ -362,17 +371,16 @@ const App = () => {
 
         <section id="projects" ref={projectsRef} style={{ minHeight: 'auto', paddingTop: '80px', paddingBottom: '80px' }}>
           <Container maxWidth="lg">
-            <Typography variant="h3" className="section-title">
-              Enterprise Solutions Portfolio
-            </Typography>
-            <Typography variant="body1" sx={{ mb: 4, textAlign: 'center', color: 'text.secondary' }}>
-              Complete multi-platform ecosystem for unified business operations
-            </Typography>
+            <SectionHeading
+              episode="EPISODE II"
+              title="Missions & Projects"
+              subtitle="Complete multi-platform ecosystem for unified business operations"
+            />
             <Grid container spacing={4}>
               {projects.map((project) => (
                 <Grid item xs={12} sm={6} key={project.id}>
                   <Card className="project-card" sx={{ height: '100%' }}>
-                    <Box sx={{ p: 2, display: 'flex', alignItems: 'center', gap: 2, bgcolor: 'rgba(123, 104, 238, 0.1)' }}>
+                    <Box sx={{ p: 2, display: 'flex', alignItems: 'center', gap: 2, bgcolor: 'rgba(255, 232, 31, 0.08)' }}>
                       {project.icon}
                       <Typography variant="h6" sx={{ fontSize: { xs: '1rem', md: '1.25rem' } }}>{project.title}</Typography>
                     </Box>
@@ -419,7 +427,7 @@ const App = () => {
                             key={index}
                             label={tag}
                             size="small"
-                            sx={{ bgcolor: 'rgba(123, 104, 238, 0.2)' }}
+                            sx={{ bgcolor: 'rgba(255, 232, 31, 0.18)' }}
                           />
                         ))}
                       </Box>
@@ -445,14 +453,13 @@ const App = () => {
 
         <section id="research" ref={researchRef} style={{ minHeight: 'auto', paddingTop: '80px', paddingBottom: '80px' }}>
           <Container maxWidth="lg">
-            <Typography variant="h3" className="section-title">
-              Technical Research & Innovation
-            </Typography>
-            <Typography variant="body1" sx={{ mb: 4, textAlign: 'center', color: 'text.secondary' }}>
-              Exploring cutting-edge web technologies and architectural patterns
-            </Typography>
+            <SectionHeading
+              episode="EPISODE III"
+              title="Research & Innovation"
+              subtitle="Exploring cutting-edge web technologies and architectural patterns"
+            />
             {researchProjects.map((research) => (
-              <Paper key={research.id} sx={{ p: { xs: 2, sm: 3, md: 4 }, mb: 3, bgcolor: 'rgba(19, 19, 54, 0.8)' }}>
+              <Paper key={research.id} sx={{ p: { xs: 2, sm: 3, md: 4 }, mb: 3, bgcolor: 'rgba(12, 12, 18, 0.85)' }}>
                 <Box display="flex" flexDirection={{ xs: 'column', sm: 'row' }} justifyContent="space-between" alignItems={{ xs: 'flex-start', sm: 'center' }} mb={2} gap={2}>
                   <Typography variant="h5" gutterBottom sx={{ fontSize: { xs: '1.25rem', md: '1.5rem' } }}>
                     {research.title}
@@ -517,7 +524,7 @@ const App = () => {
                   </Grid>
                 </Grid>
 
-                <Box mt={3} p={2} sx={{ bgcolor: 'rgba(123, 104, 238, 0.1)', borderRadius: 2 }}>
+                <Box mt={3} p={2} sx={{ bgcolor: 'rgba(255, 232, 31, 0.08)', borderRadius: 2 }}>
                   <Typography variant="h6" gutterBottom sx={{ color: 'primary.main' }}>
                     Solution Architecture
                   </Typography>
@@ -532,7 +539,7 @@ const App = () => {
 
         <section id="experience" ref={experienceRef} style={{ minHeight: 'auto', paddingTop: '80px', paddingBottom: '80px' }}>
           <Container maxWidth="lg">
-            <Typography variant="h3" className="section-title">Professional Experience</Typography>
+            <SectionHeading episode="EPISODE IV" title="Professional Experience" />
             <Paper className="experience-card">
               <Box p={{ xs: 2, sm: 3, md: 4 }}>
                 <Typography variant="h5" gutterBottom>Software Developer</Typography>
@@ -560,7 +567,7 @@ const App = () => {
 
         <section id="contact" ref={contactRef} style={{ minHeight: 'auto', paddingTop: '80px', paddingBottom: '80px' }}>
           <Container maxWidth="lg">
-            <Typography variant="h3" className="section-title">Contact Me</Typography>
+            <SectionHeading episode="EPISODE V" title="Transmission" subtitle="Send a signal across the galaxy" />
             <Grid container spacing={6} justifyContent="center">
               <Grid item xs={12} md={8}>
                 <Paper className="contact-info-card">
@@ -628,6 +635,21 @@ const App = () => {
     </ThemeProvider>
   );
 };
+
+const SectionHeading = ({ episode, title, subtitle }) => (
+  <Box mb={4}>
+    {episode && <span className="episode-label">{episode}</span>}
+    <Typography variant="h3" className="section-title" sx={{ display: 'block', textAlign: 'center' }}>
+      {title}
+    </Typography>
+    <div className="lightsaber-divider"></div>
+    {subtitle && (
+      <Typography variant="body1" sx={{ mt: -4, mb: 4, textAlign: 'center', color: 'text.secondary' }}>
+        {subtitle}
+      </Typography>
+    )}
+  </Box>
+);
 
 const StarshipCursor = () => {
   const cursorRef = useRef(null);
