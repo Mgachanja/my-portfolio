@@ -644,37 +644,87 @@ h2 {
   border-right: 1px solid var(--ink-faint);
 }
 
-.project-schematic {
+.gallery {
   width: 100%;
-  height: auto;
 }
 
-.schem-frame {
-  fill: var(--surface);
-  stroke: var(--ink-faint);
-  stroke-width: 1.5;
+.gallery__track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 4px 4px 8px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
 
-.schem-fill-faint {
-  fill: var(--ink-faint);
+.gallery__track::-webkit-scrollbar {
+  display: none;
 }
 
-.schem-fill-soft {
-  fill: var(--amber-soft);
+.gallery__slide {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  margin: 0;
+  height: 440px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--ink-faint);
+  background: var(--surface);
 }
 
-.schem-fill-sunken {
-  fill: var(--surface-sunken);
-  stroke: var(--ink-faint);
-  stroke-width: 1;
+.gallery__slide img {
+  height: 100%;
+  width: auto;
+  display: block;
+  object-fit: cover;
 }
 
-.schem-fill-bright {
-  fill: var(--amber-bright);
+.gallery__controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
 }
 
-.schem-dot {
-  fill: var(--ink-faint);
+.gallery__dots {
+  display: flex;
+  gap: 4px;
+}
+
+.gallery__dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+}
+
+.gallery__dot::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ink-faint);
+  transform: translate(-50%, -50%);
+  transition: background-color 0.2s var(--ease-out-quart), transform 0.2s var(--ease-out-quart);
+}
+
+.gallery__dot--active::before {
+  background: var(--amber-bright);
+  transform: translate(-50%, -50%) scale(1.25);
+}
+
+.gallery__caption {
+  font-size: 0.8rem;
+  color: var(--ink-dim);
 }
 
 .project-card__body {
@@ -758,6 +808,10 @@ h2 {
   .project-card__visual {
     border-right: none;
     border-bottom: 1px solid var(--ink-faint);
+  }
+
+  .gallery__slide {
+    height: 360px;
   }
 
   .project-card__body {
@@ -868,6 +922,34 @@ h2 {
   .exploring-card__lists {
     grid-template-columns: 1fr;
   }
+}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  max-width: 78ch;
+}
+
+.faq-list__row {
+  padding: 24px 0;
+  border-top: 1px solid var(--ink-faint);
+}
+
+.faq-list__row:last-child {
+  border-bottom: 1px solid var(--ink-faint);
+}
+
+.faq-list__question {
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+}
+
+.faq-list__answer {
+  color: var(--ink-dim);
+  margin: 0;
 }
 
 /* ============================================================

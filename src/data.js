@@ -60,6 +60,13 @@ export const project = {
     'Push notifications',
   ],
   inProgress: ['Admin dashboard', 'Real-time order tracking'],
+  screenshots: [
+    'Product catalog',
+    'M-Pesa checkout',
+    'Location permission',
+    'Order tracking',
+    'Order details',
+  ],
 };
 
 export const exploring = {
@@ -90,3 +97,31 @@ export const education = {
   period: '2022 – 2026',
   note: 'Final semester',
 };
+
+export const faqs = [
+  {
+    question: 'Is Mark Gachanja Ngari available for freelance or contract work?',
+    answer:
+      'Yes. Mark is currently employed full-time at Cenco Consultoria and takes on freelance and contract projects alongside that role, in addition to being open to new full-time roles.',
+  },
+  {
+    question: "What's Mark's tech stack?",
+    answer:
+      'React, Next.js, and React Native on the frontend; Node.js, Spring Boot, and Laravel on the backend. Also works with TypeScript, Java, and PHP.',
+  },
+  {
+    question: 'Where is Mark based, and does he work remotely?',
+    answer:
+      'Nairobi, Kenya. He works remotely and is open to remote-first roles, international clients, and cross-timezone teams.',
+  },
+  {
+    question: "What's Mark's experience with React version migrations?",
+    answer:
+      'He led multiple production React 16 to React 18 migrations at Cenco Consultoria — defining the upgrade strategy, validating breaking changes, and confirming performance gains before full rollout.',
+  },
+  {
+    question: 'How do I contact Mark about a project?',
+    answer:
+      "WhatsApp is fastest: +254 768 212 567. Email works too: gachanjangarimark@gmail.com. There's no contact form — every contact link on this site opens a real conversation directly.",
+  },
+];

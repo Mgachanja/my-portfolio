@@ -1,0 +1,22 @@
+# Mark Gachanja Ngari
+
+> Full stack developer based in Nairobi, Kenya, working across React, Next.js, and React Native on the frontend, and Node.js, Spring Boot, and Laravel on the backend. Currently employed full-time at Cenco Consultoria, and open to full-time roles, contract work, and freelance projects.
+
+Mark led multiple production React 16 → React 18 migrations at Cenco Consultoria (Mar 2024–present, remote), defining the upgrade strategy and validating breaking changes before rollout. He independently built Arpella Stores, a mobile-first e-commerce platform spanning web, Android, and iOS (React + React Native), covering product catalog, authentication, checkout with M-Pesa payment, and push notifications.
+
+Tech stack: JavaScript (ES6+), TypeScript, Java, PHP, HTML5, CSS3, React, Next.js, React Native (Expo), Node.js (Express), Spring Boot, Laravel, Git, GitHub, Figma.
+
+Education: BSc Business Information Technology, Dedan Kimathi University of Technology (2022–2026, final year).
+
+## Contact
+
+- WhatsApp: https://wa.me/254768212567
+- Email: gachanjangarimark@gmail.com
+- Phone: +254 768 212 567
+- LinkedIn: https://www.linkedin.com/in/ngari-mark-gachanja/
+- GitHub: https://github.com/Mgachanja
+
+## Pages
+
+- [Portfolio](https://gachanja.vercel.app/): full case study, experience, and contact links
+- [Résumé (PDF)](https://gachanja.vercel.app/mark-gachanja-ngari-cv.pdf)

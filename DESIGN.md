@@ -45,7 +45,7 @@ Single-page scroll, generous whitespace, no card-grid reflex. Each section gets 
 - **Stack line** — tech stack presented as a single real `"dependencies"` object in mono, not a logo marquee.
 - **About** — short paragraph + a definition-list of quick facts (location, focus, currently, education). Text-based, not a card grid.
 - **Experience** — one real role, given a full, generously-spaced write-up (not a padded timeline for a single entry). Small echo of the diff motif beside the migration bullet only.
-- **Projects** — one flagship case study (Arpella Stores), full width. Platform badges (Web/iOS/Android) as mono tags. A geometric SVG interface schematic (abstract wireframe blocks representing the actual product screens) stands in for a screenshot — justified because it depicts the real product's structure, not decorative. A secondary "currently exploring" line for the R&D project, clearly labeled, no full case-study treatment for unproven work.
+- **Projects** — one flagship case study (Arpella Stores), full width. Platform badges (Web/iOS/Android) as mono tags. A horizontal, scroll-snap gallery of real product screenshots (product catalog, M-Pesa checkout, order tracking) with dot navigation and captions — actual app screens, not a stand-in illustration. A secondary "currently exploring" line for the R&D project, clearly labeled, no full case-study treatment for unproven work.
 - **Contact** — the conversion section. Three large tap targets: WhatsApp, Call, Email (real `wa.me` / `tel:` / `mailto:` links, not decorative icons), plus LinkedIn/GitHub/CV as secondary links. Copy-to-clipboard fallback on email with visible confirmation state.
 - **Footer** — minimal: logotype echo, back-to-top, one line.
 
@@ -68,7 +68,7 @@ The `-` line renders in rose with a strike-through fade; the `+` line types in w
 Tailored per section, not one uniform fade applied everywhere:
 
 - Hero: diff panel types on load; name/CTA stagger in.
-- Scroll reveal: each section's reveal matches its content (list items step in with a small stagger; the project schematic draws its blocks in sequentially; single-paragraph sections do a plain fade-slide).
+- Scroll reveal: each section's reveal matches its content (list items step in with a small stagger; single-paragraph sections do a plain fade-slide).
 - Scroll progress: thin amber bar at the top edge — a real progress indicator, not decoration.
 - Buttons: subtle spring lift on hover/focus, no bounce/elastic easing anywhere (ease-out-quart family only).
 - No custom cursor, no parallax starfield, no glassmorphism blur cards.
@@ -83,4 +83,4 @@ Tailored per section, not one uniform fade applied everywhere:
 
 ## Accessibility
 
-WCAG AA: 4.5:1 body text minimum, 3:1 for large/bold text and UI borders. Keyboard focus visible everywhere. Semantic landmarks (`header`, `nav`, `main`, `section`, `footer`), correct heading order, descriptive link text (no bare "click here"), alt text on the profile photo and the project schematic. `prefers-reduced-motion` respected throughout (see Motion).
+WCAG AA: 4.5:1 body text minimum, 3:1 for large/bold text and UI borders. Keyboard focus visible everywhere. Semantic landmarks (`header`, `nav`, `main`, `section`, `footer`), correct heading order, descriptive link text (no bare "click here"), alt text on the profile photo and every project screenshot. `prefers-reduced-motion` respected throughout (see Motion).

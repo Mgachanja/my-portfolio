@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { project } from '../data';
-import ProjectSchematic from './ProjectSchematic';
+import ProjectGallery from './ProjectGallery';
 
 const Projects = () => (
   <section className="section projects" aria-labelledby="projects-heading">
@@ -16,7 +16,7 @@ const Projects = () => (
         transition={{ duration: 0.55, ease: [0.25, 1, 0.5, 1] }}
       >
         <div className="project-card__visual">
-          <ProjectSchematic />
+          <ProjectGallery />
         </div>
 
         <div className="project-card__body">
