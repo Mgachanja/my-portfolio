@@ -100,28 +100,26 @@ export const education = {
 
 export const faqs = [
   {
-    question: 'Is Mark Gachanja Ngari available for freelance or contract work?',
+    question: 'Are you available for freelance or contract work?',
     answer:
-      'Yes. Mark is currently employed full-time at Cenco Consultoria and takes on freelance and contract projects alongside that role, in addition to being open to new full-time roles.',
+      "Yes — I'm full-time at Cenco Consultoria right now, and I take on freelance and contract projects alongside that. Open to new full-time roles too.",
   },
   {
-    question: "What's Mark's tech stack?",
+    question: "What's your tech stack?",
     answer:
-      'React, Next.js, and React Native on the frontend; Node.js, Spring Boot, and Laravel on the backend. Also works with TypeScript, Java, and PHP.',
+      'React, Next.js, and React Native on the frontend. Node.js, Spring Boot, and Laravel on the backend. TypeScript, Java, and PHP round it out.',
   },
   {
-    question: 'Where is Mark based, and does he work remotely?',
-    answer:
-      'Nairobi, Kenya. He works remotely and is open to remote-first roles, international clients, and cross-timezone teams.',
+    question: 'Where are you based? Do you work remote?',
+    answer: "Nairobi, Kenya. I work remote and I'm comfortable with international clients and cross-timezone teams.",
   },
   {
-    question: "What's Mark's experience with React version migrations?",
+    question: "What's your experience with React migrations?",
     answer:
-      'He led multiple production React 16 to React 18 migrations at Cenco Consultoria — defining the upgrade strategy, validating breaking changes, and confirming performance gains before full rollout.',
+      'I led several production React 16 to 18 migrations at Cenco — owned the upgrade strategy, resolved the breaking changes, confirmed performance gains before rollout.',
   },
   {
-    question: 'How do I contact Mark about a project?',
-    answer:
-      "WhatsApp is fastest: +254 768 212 567. Email works too: gachanjangarimark@gmail.com. There's no contact form — every contact link on this site opens a real conversation directly.",
+    question: "What's the fastest way to reach you?",
+    answer: "WhatsApp — I'll usually reply same day. Email works too. No contact form here, just real links.",
   },
 ];
